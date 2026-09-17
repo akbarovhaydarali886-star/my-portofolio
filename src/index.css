@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --forest-deep: #0c3327;
+  --forest: #0e3b2e;
+  --forest-mid: #155a44;
+  --mint: #8fd9b6;
+  --mint-soft: #c9f0dc;
+  --snow: #f7fbf9;
+  --snow-dim: #e4efe9;
+  --ink: #0b2118;
+  --ink-soft: #4d6459;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
+
+  --max-w: 1120px;
+  --radius: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--snow);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--mint);
+  outline-offset: 3px;
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+  margin: 0 0 8px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  color: var(--ink);
+}
+
+section {
+  padding: 96px 0;
+}
+
+@media (max-width: 720px) {
+  section {
+    padding: 64px 0;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: var(--forest);
+  color: var(--snow);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 20%, rgba(143, 217, 182, 0.28) 50%, transparent 80%);
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
+}
+
+.btn-primary:hover::after {
+  transform: translateX(120%);
+}
+
+.btn-primary:hover {
+  background: var(--forest-mid);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--forest);
+  border-color: var(--forest);
+}
+
+.btn-ghost:hover {
+  background: var(--forest);
+  color: var(--snow);
+}
+
+.on-dark .btn-ghost {
+  color: var(--snow);
+  border-color: rgba(247, 251, 249, 0.45);
+}
+
+.on-dark .btn-ghost:hover {
+  background: var(--snow);
+  color: var(--forest);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.tech-svg {
+  color: var(--forest);
+  display: block;
+}
+
+.icon-react .orbit {
+  transform-origin: 24px 24px;
+  transform-box: fill-box;
+  animation: spin 9s linear infinite;
+}
+
+.icon-react .o2 { animation-duration: 12s; animation-direction: reverse; }
+.icon-react .o3 { animation-duration: 7s; }
+.icon-react .nucleus { animation: pulse-dot 1.8s ease-in-out infinite; }
+
+.icon-vue .leaf-a { transform-origin: 24px 28px; animation: leaf-breathe 2.8s ease-in-out infinite; }
+.icon-vue .leaf-b { transform-origin: 24px 22px; animation: leaf-breathe 2.8s ease-in-out infinite reverse; }
+
+.icon-bootstrap .col { transform-box: fill-box; transform-origin: center bottom; animation: col-grow 2.4s ease-in-out infinite; }
+.icon-bootstrap .col-a { animation-delay: 0s; }
+.icon-bootstrap .col-b { animation-delay: 0.2s; }
+.icon-bootstrap .col-c { animation-delay: 0.4s; }
+
+.icon-html .icon-draw { stroke-dasharray: 18; stroke-dashoffset: 18; animation: draw-line 2.4s ease forwards infinite; }
+.icon-css .icon-hash-h { animation: hash-shift 2.6s ease-in-out infinite; }
+.icon-js .icon-js-s { animation: js-flick 2.2s ease-in-out infinite; }
+.icon-next .icon-next-slash { stroke-dasharray: 22; animation: draw-line 2.8s ease infinite; }
+.icon-ux .f2 { animation: frame-shift 3s ease-in-out infinite; }
+.icon-api .n1, .icon-api .n2, .icon-api .n3 { animation: pulse-dot 1.6s ease-in-out infinite; }
+.icon-api .n2 { animation-delay: 0.2s; }
+.icon-api .n3 { animation-delay: 0.4s; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.82); opacity: 0.7; }
+}
+
+@keyframes leaf-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+@keyframes col-grow {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.78); }
+}
+
+@keyframes draw-line {
+  0% { stroke-dashoffset: 22; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 22; }
+}
+
+@keyframes hash-shift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1.5px); }
+}
+
+@keyframes js-flick {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+@keyframes frame-shift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(1.5px, -1.5px); }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

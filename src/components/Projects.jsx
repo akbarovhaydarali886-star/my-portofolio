@@ -1,14 +1,8 @@
-import { useEffect, useState } from 'react'
-import { getProjects } from '../utils/storage.js'
+import { projects } from '../data/projects.js'
 import ProjectCard from './ProjectCard.jsx'
 import Reveal from './Reveal.jsx'
 
 export default function Projects() {
-  const [projects, setProjects] = useState([])
-
-  useEffect(() => {
-    setProjects(getProjects())
-  }, [])
 
   return (
     <section id="projects" className="projects">

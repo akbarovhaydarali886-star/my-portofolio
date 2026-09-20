@@ -1,5 +1,5 @@
 export default function ProjectCard({ project }) {
-  const { title, description, image, link } = project
+  const { title, description, image, link, tags } = project
 
   const CardInner = (
     <>
@@ -13,6 +13,15 @@ export default function ProjectCard({ project }) {
       <div className="pcard-body">
         <h3>{title}</h3>
         {description && <p>{description}</p>}
+        
+        {tags && tags.length > 0 && (
+          <div className="pcard-tags">
+            {tags.map((t, idx) => (
+              <span key={idx} className="pcard-tag">{t}</span>
+            ))}
+          </div>
+        )}
+
         {link && <span className="pcard-link">Ko'rish →</span>}
       </div>
     </>
@@ -30,7 +39,9 @@ export default function ProjectCard({ project }) {
 
       <style>{`
         .pcard {
-          display: block;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
           background: var(--snow);
           border: 1px solid rgba(11,33,24,0.08);
           border-radius: var(--radius);
@@ -63,6 +74,9 @@ export default function ProjectCard({ project }) {
         }
         .pcard-body {
           padding: 20px 22px 24px;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
         }
         .pcard-body h3 {
           font-size: 1.1rem;
@@ -71,7 +85,22 @@ export default function ProjectCard({ project }) {
         .pcard-body p {
           color: var(--ink-soft);
           font-size: 0.92rem;
-          margin: 0 0 12px;
+          margin: 0 0 16px;
+        }
+        .pcard-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-bottom: 18px;
+          margin-top: auto;
+        }
+        .pcard-tag {
+          font-size: 0.75rem;
+          font-weight: 600;
+          background: rgba(14, 59, 46, 0.06);
+          color: var(--forest);
+          padding: 4px 10px;
+          border-radius: 40px;
         }
         .pcard-link {
           display: inline-block;

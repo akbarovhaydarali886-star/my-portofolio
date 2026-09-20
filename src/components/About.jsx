@@ -6,7 +6,6 @@ export default function About() {
       <div className="container about-inner">
         <Reveal>
           <p className="eyebrow">Men haqimda</p>
-          <h2 className="about-title">Kodni g'amxo'rlik bilan yozaman</h2>
           <p className="about-text">
             Men Akbarov Haydarali, 2010-yil 31-oktabrda Qashqadaryo viloyati
             Qarshi shahrida tug'ilganman. Frontend sohasida 2 yildan beri

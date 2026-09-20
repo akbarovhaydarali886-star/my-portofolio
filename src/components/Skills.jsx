@@ -48,12 +48,13 @@ export default function Skills() {
           display: flex;
           align-items: center;
           gap: 14px;
-          transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+          transition: border-color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background 0.3s ease;
         }
         .skill-chip.is-visible:hover {
           border-color: var(--forest);
-          transform: translateY(-4px);
+          transform: translateY(-6px) scale(1.02);
           background: #fff;
+          box-shadow: 0 12px 24px rgba(11, 33, 24, 0.06);
         }
         .skill-icon {
           width: 52px;

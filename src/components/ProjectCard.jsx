@@ -35,11 +35,12 @@ export default function ProjectCard({ project }) {
           border: 1px solid rgba(11,33,24,0.08);
           border-radius: var(--radius);
           overflow: hidden;
-          transition: border-color 0.2s ease, transform 0.15s ease;
+          transition: border-color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
         }
         a.pcard:hover {
           border-color: var(--forest);
-          transform: translateY(-6px);
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: 0 16px 32px rgba(11, 33, 24, 0.08);
         }
         .pcard-image {
           aspect-ratio: 16 / 10;

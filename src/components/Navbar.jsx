@@ -56,14 +56,14 @@ export default function Navbar() {
           position: sticky;
           top: 0;
           z-index: 50;
-          background: rgba(247, 251, 249, 0.85);
+          background: rgba(0, 0, 0, 0.85);
           backdrop-filter: saturate(180%) blur(10px);
           border-bottom: 1px solid transparent;
           transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.25s ease;
         }
         .navbar-scrolled {
-          border-bottom-color: var(--snow-dim);
-          box-shadow: 0 8px 24px rgba(11, 33, 24, 0.06);
+          border-bottom-color: rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
         }
         .navbar-inner {
           display: flex;
@@ -75,7 +75,7 @@ export default function Navbar() {
           font-family: var(--font-display);
           font-size: 1.25rem;
           font-weight: 600;
-          color: var(--forest);
+          color: #ffffff;
           position: relative;
         }
         .navbar-logo::after {
@@ -85,7 +85,7 @@ export default function Navbar() {
           bottom: -4px;
           width: 0;
           height: 2px;
-          background: var(--mint);
+          background: #ffffff;
           transition: width 0.25s ease;
         }
         .navbar-logo:hover::after {
@@ -105,7 +105,7 @@ export default function Navbar() {
           bottom: -6px;
           width: 0;
           height: 2px;
-          background: var(--forest);
+          background: #ffffff;
           transition: width 0.22s ease;
         }
         .navbar-links-desktop a:hover::after {
@@ -116,7 +116,7 @@ export default function Navbar() {
           gap: 32px;
         }
         .navbar-links a:hover {
-          color: var(--forest);
+          color: #ffffff;
         }
         .navbar-toggle {
           display: none;
@@ -130,7 +130,7 @@ export default function Navbar() {
         .navbar-toggle span {
           width: 22px;
           height: 2px;
-          background: var(--forest);
+          background: #ffffff;
         }
         .navbar-links-mobile {
           display: none;
@@ -146,13 +146,13 @@ export default function Navbar() {
             display: flex;
             flex-direction: column;
             padding: 8px 24px 20px;
-            background: var(--snow);
-            border-bottom: 1px solid var(--snow-dim);
+            background: var(--bg-secondary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           }
           .navbar-links-mobile a {
             padding: 12px 0;
-            border-bottom: 1px solid var(--snow-dim);
-            color: var(--ink);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
             font-weight: 600;
           }
         }

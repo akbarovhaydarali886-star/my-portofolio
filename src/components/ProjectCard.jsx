@@ -42,20 +42,20 @@ export default function ProjectCard({ project }) {
           display: flex;
           flex-direction: column;
           height: 100%;
-          background: var(--snow);
-          border: 1px solid rgba(11,33,24,0.08);
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.1);
           border-radius: var(--radius);
           overflow: hidden;
           transition: border-color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
         }
         a.pcard:hover {
-          border-color: var(--forest);
+          border-color: rgba(255, 255, 255, 0.3);
           transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 16px 32px rgba(11, 33, 24, 0.08);
+          box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
         }
         .pcard-image {
           aspect-ratio: 16 / 10;
-          background: var(--snow-dim);
+          background: rgba(0, 0, 0, 1);
           overflow: hidden;
         }
         .pcard-image img {
@@ -70,7 +70,7 @@ export default function ProjectCard({ project }) {
         .pcard-placeholder {
           width: 100%;
           height: 100%;
-          background: linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 100%);
+          background: linear-gradient(135deg, #111, #222);
         }
         .pcard-body {
           padding: 20px 22px 24px;
@@ -99,8 +99,8 @@ export default function ProjectCard({ project }) {
         .pcard-tag {
           font-size: 0.75rem;
           font-weight: 600;
-          background: rgba(14, 59, 46, 0.06);
-          color: var(--forest);
+          background: rgba(255, 255, 255, 0.1);
+          color: #ffffff;
           padding: 4px 10px;
           border-radius: 40px;
         }
@@ -108,7 +108,7 @@ export default function ProjectCard({ project }) {
           display: inline-block;
           font-size: 0.85rem;
           font-weight: 700;
-          color: var(--forest);
+          color: #ffffff;
           transition: transform 0.2s ease;
         }
         a.pcard:hover .pcard-link {

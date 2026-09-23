@@ -41,8 +41,8 @@ export default function Skills() {
           gap: 14px;
         }
         .skill-chip {
-          background: var(--snow);
-          border: 1px solid rgba(11,33,24,0.08);
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.1);
           border-radius: var(--radius);
           padding: 18px 18px;
           display: flex;
@@ -51,10 +51,10 @@ export default function Skills() {
           transition: border-color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background 0.3s ease;
         }
         .skill-chip.is-visible:hover {
-          border-color: var(--forest);
+          border-color: rgba(255, 255, 255, 0.3);
           transform: translateY(-6px) scale(1.02);
-          background: #fff;
-          box-shadow: 0 12px 24px rgba(11, 33, 24, 0.06);
+          background: rgba(255, 255, 255, 0.06);
+          box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
         }
         .skill-icon {
           width: 52px;
@@ -63,12 +63,12 @@ export default function Skills() {
           display: grid;
           place-items: center;
           border-radius: 10px;
-          background: rgba(14, 59, 46, 0.07);
-          color: var(--forest);
+          background: rgba(255, 255, 255, 0.05);
+          color: var(--ink);
         }
         .skill-chip:hover .skill-icon {
-          background: var(--forest);
-          color: var(--mint);
+          background: #ffffff;
+          color: #000000;
         }
         .skill-copy {
           display: flex;

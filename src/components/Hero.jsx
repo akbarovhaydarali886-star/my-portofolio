@@ -47,20 +47,20 @@ export default function Hero() {
           <svg viewBox="0 0 320 320" width="100%" height="100%">
             <defs>
               <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stopColor="#8fd9b6" stopOpacity="0.9" />
-                <stop offset="1" stopColor="#8fd9b6" stopOpacity="0.15" />
+                <stop offset="0" stopColor="#ffffff" stopOpacity="0.4" />
+                <stop offset="1" stopColor="#ffffff" stopOpacity="0.05" />
               </linearGradient>
             </defs>
             {Array.from({ length: 5 }).map((_, i) => (
-              <line key={`v${i}`} x1={i * 80} y1="0" x2={i * 80} y2="320" stroke="rgba(247,251,249,0.12)" strokeWidth="1" />
+              <line key={`v${i}`} x1={i * 80} y1="0" x2={i * 80} y2="320" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
             ))}
             {Array.from({ length: 5 }).map((_, i) => (
-              <line key={`h${i}`} x1="0" y1={i * 80} x2="320" y2={i * 80} stroke="rgba(247,251,249,0.12)" strokeWidth="1" />
+              <line key={`h${i}`} x1="0" y1={i * 80} x2="320" y2={i * 80} stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
             ))}
             <rect className="hero-box" x="80" y="80" width="160" height="160" fill="none" stroke="url(#g1)" strokeWidth="2" />
-            <circle cx="80" cy="80" r="5" fill="#8fd9b6" />
-            <circle cx="240" cy="240" r="5" fill="#8fd9b6" />
-            <rect x="120" y="120" width="80" height="80" fill="rgba(143,217,182,0.12)" stroke="#8fd9b6" strokeWidth="1.5" />
+            <circle cx="80" cy="80" r="5" fill="#ffffff" />
+            <circle cx="240" cy="240" r="5" fill="#ffffff" />
+            <rect x="120" y="120" width="80" height="80" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
           </svg>
         </div>
       </div>
@@ -114,20 +114,20 @@ export default function Hero() {
           height: 44px;
           display: grid;
           place-items: center;
-          border: 1px solid rgba(143, 217, 182, 0.28);
+          border: 1px solid rgba(255, 255, 255, 0.15);
           border-radius: 10px;
-          color: var(--mint);
-          background: rgba(143, 217, 182, 0.08);
-          transition: transform 0.25s ease, background 0.25s ease;
+          color: var(--snow);
+          background: rgba(255, 255, 255, 0.03);
+          transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
         }
         .hero-stack-item .tech-svg {
           width: 28px;
           height: 28px;
-          color: var(--mint);
         }
         .hero-stack-item:hover {
           transform: translateY(-4px) scale(1.06);
-          background: rgba(143, 217, 182, 0.18);
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(255, 255, 255, 0.3);
         }
         .hero-grid {
           max-width: 320px;
@@ -142,16 +142,15 @@ export default function Hero() {
           display: grid;
           place-items: center;
           border-radius: 50%;
-          background: rgba(12, 51, 39, 0.85);
-          border: 1px solid rgba(143, 217, 182, 0.4);
-          color: var(--mint);
+          background: #000000;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: var(--snow);
           animation: float-y 3.4s ease-in-out infinite;
           z-index: 1;
         }
         .hero-orbit-icon .tech-svg {
           width: 22px;
           height: 22px;
-          color: var(--mint);
         }
         .hero-box {
           transform-origin: 160px 160px;

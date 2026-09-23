@@ -74,7 +74,6 @@ export default function About() {
           }
         }
       `}</style>
-      </div>
     </section>
   )
 }

@@ -13,34 +13,29 @@ function Svg({ children, className = '' }) {
   )
 }
 
-export function HtmlIcon() {
+export function TsIcon() {
   return (
-    <Svg className="icon-html">
-      <path d="M14 10 L8 24 L14 38" stroke="#E34F26" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M34 10 L40 24 L34 38" stroke="#E34F26" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-      <path className="icon-draw" d="M20 30 L28 18" stroke="#E34F26" strokeWidth="2.2" strokeLinecap="round" />
+    <Svg className="icon-ts">
+      <rect x="8" y="8" width="32" height="32" rx="4" fill="#3178C6" />
+      <text x="24" y="30" fill="#FFF" fontSize="18" fontWeight="bold" fontFamily="sans-serif" textAnchor="middle">TS</text>
     </Svg>
   )
 }
 
-export function CssIcon() {
+export function TailwindIcon() {
   return (
-    <Svg className="icon-css">
-      <rect x="10" y="10" width="28" height="28" rx="4" stroke="#1572B6" strokeWidth="2" />
-      <path className="icon-hash-v" d="M20 16 V32" stroke="#1572B6" strokeWidth="2" strokeLinecap="round" />
-      <path className="icon-hash-v" d="M28 16 V32" stroke="#1572B6" strokeWidth="2" strokeLinecap="round" />
-      <path className="icon-hash-h" d="M15 21 H33" stroke="#1572B6" strokeWidth="2" strokeLinecap="round" />
-      <path className="icon-hash-h" d="M15 27 H33" stroke="#1572B6" strokeWidth="2" strokeLinecap="round" />
+    <Svg className="icon-tailwind">
+      <path d="M14 22 C14 17 18 15 22 15 C26 15 26 19 30 19 C34 19 38 17 38 17 C38 22 34 24 30 24 C26 24 26 20 22 20 C18 20 14 22 14 22 Z" fill="#06B6D4" />
+      <path d="M10 29 C10 24 14 22 18 22 C22 22 22 26 26 26 C30 26 34 24 34 24 C34 29 30 31 26 31 C22 31 22 27 18 27 C14 27 10 29 10 29 Z" fill="#06B6D4" />
     </Svg>
   )
 }
 
-export function BootstrapIcon() {
+export function GoIcon() {
   return (
-    <Svg className="icon-bootstrap">
-      <rect className="col col-a" x="10" y="12" width="7" height="24" rx="1.5" fill="#7952B3" opacity="0.45" />
-      <rect className="col col-b" x="20.5" y="8" width="7" height="32" rx="1.5" fill="#7952B3" />
-      <rect className="col col-c" x="31" y="16" width="7" height="20" rx="1.5" fill="#7952B3" opacity="0.75" />
+    <Svg className="icon-go">
+      <rect x="6" y="12" width="36" height="24" rx="12" fill="#00ADD8" />
+      <text x="24" y="29" fill="#FFF" fontSize="16" fontWeight="bold" fontFamily="sans-serif" textAnchor="middle" letterSpacing="1">GO</text>
     </Svg>
   )
 }
@@ -48,7 +43,7 @@ export function BootstrapIcon() {
 export function JsIcon() {
   return (
     <Svg className="icon-js">
-      <rect x="8" y="8" width="32" height="32" rx="6" fill="#F7DF1E" />
+      <rect x="8" y="8" width="32" height="32" rx="4" fill="#F7DF1E" />
       <path d="M20 18 V30 C20 33 17 34 15 33" stroke="#000" strokeWidth="2.2" strokeLinecap="round" fill="none" />
       <path className="icon-js-s" d="M26 22 C32 20 34 24 28 26 C34 26 34 32 27 32" stroke="#000" strokeWidth="2.2" strokeLinecap="round" fill="none" />
     </Svg>
@@ -116,9 +111,9 @@ export function ApiIcon() {
 }
 
 const ICONS = {
-  html: HtmlIcon,
-  css: CssIcon,
-  bootstrap: BootstrapIcon,
+  ts: TsIcon,
+  tailwind: TailwindIcon,
+  go: GoIcon,
   js: JsIcon,
   react: ReactIcon,
   vue: VueIcon,
@@ -133,13 +128,13 @@ export default function TechIcon({ id }) {
 }
 
 export const TECH_STACK = [
-  { id: 'html', name: 'HTML', group: "Bo'linma" },
-  { id: 'css', name: 'CSS / SCSS', group: "Bo'linma" },
-  { id: 'bootstrap', name: 'Bootstrap', group: "Bo'linma" },
-  { id: 'js', name: 'JavaScript', group: 'Tillar' },
-  { id: 'react', name: 'React.js', group: 'Freymvorklar' },
-  { id: 'vue', name: 'Vue.js', group: 'Freymvorklar' },
-  { id: 'next', name: 'Next.js', group: 'Freymvorklar' },
-  { id: 'ux', name: 'UI / UX dizayn', group: 'Dizayn' },
-  { id: 'api', name: 'API / REST API', group: 'Integratsiya' },
+  { id: 'ts', name: 'TypeScript', group: 'Languages' },
+  { id: 'js', name: 'JavaScript', group: 'Languages' },
+  { id: 'go', name: 'Go (Golang)', group: 'Languages' },
+  { id: 'react', name: 'React.js', group: 'Frameworks' },
+  { id: 'next', name: 'Next.js', group: 'Frameworks' },
+  { id: 'vue', name: 'Vue.js', group: 'Frameworks' },
+  { id: 'tailwind', name: 'Tailwind CSS', group: 'Styling' },
+  { id: 'ux', name: 'System Design', group: 'Architecture' },
+  { id: 'api', name: 'Distributed APIs', group: 'Infrastructure' },
 ]

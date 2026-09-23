@@ -5,26 +5,25 @@ export default function About() {
     <section id="about" className="about">
       <div className="container about-inner">
         <Reveal>
-          <p className="eyebrow">Men haqimda</p>
+          <p className="eyebrow">Engineering Philosophy</p>
+          <h2 className="about-title">Systems Thinking & Scalability</h2>
           <p className="about-text">
-            Men Akbarov Haydarali, 2010-yil 31-oktabrda Qashqadaryo viloyati
-            Qarshi shahrida tug'ilganman. Frontend sohasida 2 yildan beri
-            o'rganib kelaman va hozirda shu yo'nalishda amaliy tajribaga
-            egaman. Har bir loyihani foydalanuvchi nuqtai nazaridan ko'rib
-            chiqishga, toza va tushunarli kod yozishga harakat qilaman.
+            I am a Software Engineer focused on building robust, scalable systems that bridge complex backend architectures with seamless frontend experiences. My engineering philosophy centers on type safety, aggressive performance optimization (Core Web Vitals), and distributed system design.
           </p>
           <p className="about-text">
-            Keyingi maqsadim — backend yo'nalishini ham chuqur o'rganib,
-            to'liq full-stack dasturchi sifatida loyihalarni boshidan
-            oxirigacha mustaqil qura olish.
+            I take end-to-end ownership of the product lifecycle—from designing concurrent API gateways in Go to engineering accessible, edge-rendered React applications. I believe in data-driven engineering: optimizing bundle sizes, reducing p99 latency, and ensuring fault tolerance in deployments.
           </p>
         </Reveal>
 
         <Reveal delay={120} className="about-edu">
-          <p className="eyebrow">Ta'lim</p>
+          <p className="eyebrow">Core Competencies</p>
           <div className="edu-card">
-            <h3>Sirdaryo pedagogika kolleji</h3>
-            <p>Sirdaryo viloyati, Sirdaryo tumani</p>
+            <h3>Architecture & Design</h3>
+            <p>Microservices, REST APIs, Edge Computing, CI/CD</p>
+          </div>
+          <div className="edu-card" style={{ marginTop: '16px' }}>
+            <h3>Frontend Performance</h3>
+            <p>Server-Side Rendering, Web Vitals, State Management</p>
           </div>
         </Reveal>
       </div>

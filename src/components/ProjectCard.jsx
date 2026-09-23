@@ -22,7 +22,7 @@ export default function ProjectCard({ project }) {
           </div>
         )}
 
-        {link && <span className="pcard-link">Ko'rish →</span>}
+        {link && <span className="pcard-link">View Project →</span>}
       </div>
     </>
   )
@@ -86,6 +86,8 @@ export default function ProjectCard({ project }) {
           color: var(--ink-soft);
           font-size: 0.92rem;
           margin: 0 0 16px;
+          white-space: pre-wrap;
+          line-height: 1.6;
         }
         .pcard-tags {
           display: flex;

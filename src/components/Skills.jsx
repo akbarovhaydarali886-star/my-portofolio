@@ -6,8 +6,8 @@ export default function Skills() {
     <section id="skills" className="skills">
       <div className="container">
         <Reveal>
-          <p className="eyebrow">Ko'nikmalar</p>
-          <h2 className="skills-title">Ishlatadigan texnologiyalarim</h2>
+          <p className="eyebrow">Technical Stack</p>
+          <h2 className="skills-title">Core Technologies & Infrastructure</h2>
         </Reveal>
 
         <div className="skills-grid">

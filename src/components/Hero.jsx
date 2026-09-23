@@ -2,9 +2,9 @@ import TechIcon, { TECH_STACK } from './TechIcons.jsx'
 
 const ORBIT = [
   { id: 'react', x: '8%', y: '6%' },
-  { id: 'js', x: '78%', y: '12%' },
-  { id: 'html', x: '-6%', y: '48%' },
-  { id: 'css', x: '86%', y: '58%' },
+  { id: 'ts', x: '78%', y: '12%' },
+  { id: 'tailwind', x: '-6%', y: '48%' },
+  { id: 'go', x: '86%', y: '58%' },
   { id: 'next', x: '18%', y: '86%' },
   { id: 'vue', x: '70%', y: '88%' },
 ]
@@ -14,18 +14,16 @@ export default function Hero() {
     <section id="home" className="hero on-dark">
       <div className="container hero-inner">
         <div className="hero-text">
-          <p className="eyebrow hero-eyebrow">Frontend Developer</p>
+          <p className="eyebrow hero-eyebrow">Senior Software Engineer</p>
           <h1 className="hero-name">Akbarov Haydarali</h1>
           <p className="hero-desc">
-            Salom! Men Frontend dasturchiman. Veb-saytlarning nafaqat chiroyli
-            ko'rinishiga, balki ularning tez ishlashi, barcha qurilmalarga
-            moslashuvchanligi va foydalanuvchiga qulay bo'lishiga alohida
-            e'tibor qarataman. Har bir loyihada toza kod yozish va zamonaviy
-            yechimlardan foydalanish asosiy maqsadim.
+            Architecting resilient, high-performance web applications and distributed backend systems. 
+            Specializing in React ecosystem performance, type-safe architectures, and scalable Go microservices. 
+            I build systems that bridge complex backend architectures with seamless, accessible frontend experiences.
           </p>
           <div className="hero-actions">
-            <a href="#projects" className="btn btn-primary">Loyihalarni ko'rish</a>
-            <a href="#contact" className="btn btn-ghost">Bog'lanish</a>
+            <a href="#projects" className="btn btn-primary">View Case Studies</a>
+            <a href="#contact" className="btn btn-ghost">Get in Touch</a>
           </div>
           <div className="hero-stack" aria-label="Asosiy texnologiyalar">
             {TECH_STACK.slice(0, 6).map((t) => (

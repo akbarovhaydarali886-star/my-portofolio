@@ -8,8 +8,8 @@ export default function Projects() {
     <section id="projects" className="projects">
       <div className="container">
         <Reveal>
-          <p className="eyebrow">Loyihalar</p>
-          <h2 className="projects-title">Qilgan ishlarim</h2>
+          <p className="eyebrow">Engineering</p>
+          <h2 className="projects-title">Featured Case Studies</h2>
         </Reveal>
 
         {projects.length === 0 ? (

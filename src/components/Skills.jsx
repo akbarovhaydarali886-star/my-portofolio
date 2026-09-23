@@ -3,27 +3,106 @@ import TechIcon, { TECH_STACK } from './TechIcons.jsx'
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-[var(--bg-secondary)]">
+    <section id="skills" className="skills">
       <div className="container relative z-10">
         <Reveal>
-          <p className="eyebrow text-[var(--accent)] tracking-widest text-sm font-semibold uppercase mb-2">Ko'nikmalar</p>
-          <h2 className="skills-title text-3xl md:text-5xl font-bold text-white mb-16">Texnologiyalar & Vositalar</h2>
+          <p className="eyebrow">Ko'nikmalar</p>
+          <h2 className="skills-title">Texnologiyalar & Vositalar</h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="skills-grid">
           {TECH_STACK.map((s, i) => (
-            <Reveal key={s.id} delay={i * 70} className="flex items-center gap-4 bg-[rgba(255,255,255,0.02)] border border-[var(--border-color)] p-4 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:border-[var(--border-hover)] hover:bg-[rgba(255,255,255,0.06)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.3)] group">
-              <span className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-[rgba(255,255,255,0.05)] text-white group-hover:bg-white group-hover:text-black transition-colors">
+            <Reveal key={s.id} delay={i * 70} className="skill-card">
+              <span className="skill-icon">
                 <TechIcon id={s.id} />
               </span>
-              <span className="flex flex-col min-w-0">
-                <span className="font-bold text-white group-hover:text-[var(--accent)] transition-colors">{s.name}</span>
-                <span className="text-xs text-[var(--ink-soft)]">{s.group}</span>
+              <span className="skill-info">
+                <span className="skill-name">{s.name}</span>
+                <span className="skill-group">{s.group}</span>
               </span>
             </Reveal>
           ))}
         </div>
       </div>
+
+      <style>{`
+        .skills {
+          background: var(--bg-secondary);
+          overflow: hidden;
+        }
+        .skills-title {
+          font-size: clamp(1.6rem, 3vw, 2.2rem);
+          margin: 0 0 40px;
+        }
+        .skills-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 16px;
+        }
+        .skill-card {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid var(--border-color);
+          padding: 16px;
+          border-radius: 12px;
+          transition: all 0.3s ease;
+        }
+        .skill-card:hover {
+          transform: translateY(-4px);
+          border-color: var(--border-hover);
+          background: rgba(255, 255, 255, 0.06);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        .skill-icon {
+          width: 48px;
+          height: 48px;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 8px;
+          background: rgba(255, 255, 255, 0.05);
+          color: #ffffff;
+          transition: all 0.3s ease;
+        }
+        .skill-card:hover .skill-icon {
+          background: #ffffff;
+          color: #000000;
+        }
+        .skill-info {
+          display: flex;
+          flex-direction: column;
+        }
+        .skill-name {
+          font-weight: 700;
+          color: #ffffff;
+          transition: color 0.3s ease;
+        }
+        .skill-card:hover .skill-name {
+          color: var(--accent);
+        }
+        .skill-group {
+          font-size: 0.75rem;
+          color: var(--ink-soft);
+        }
+        @media (max-width: 1024px) {
+          .skills-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        @media (max-width: 768px) {
+          .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 480px) {
+          .skills-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
     </section>
   )
 }

@@ -1,11 +1,23 @@
 export default function Footer() {
   return (
-    <footer className="py-8 bg-[var(--bg-main)] border-t border-[var(--border-color)]">
-      <div className="container flex justify-center items-center">
-        <span className="text-sm font-medium text-[var(--ink-soft)] tracking-wider">
-          © 2026 Haydarali Akbarov. All rights reserved.
-        </span>
+    <footer className="footer">
+      <div className="container footer-inner">
+        <span>© 2026 Haydarali Akbarov. All rights reserved.</span>
       </div>
+      <style>{`
+        .footer {
+          background: var(--bg-main);
+          border-top: 1px solid var(--border-color);
+          padding: 24px 0;
+        }
+        .footer-inner {
+          display: flex;
+          justify-content: center;
+          font-size: 0.85rem;
+          color: var(--ink-soft);
+          letter-spacing: 0.05em;
+        }
+      `}</style>
     </footer>
   )
 }

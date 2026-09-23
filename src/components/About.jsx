@@ -6,70 +6,75 @@ export default function About() {
       <div className="container about-inner">
         <Reveal>
           <p className="eyebrow">Men haqimda</p>
-          <h2 className="about-title text-4xl mb-6">Ta'lim va Tajriba</h2>
-          <p className="about-text text-[var(--ink-soft)] text-lg mb-4">
+          <h2 className="about-title">Ta'lim va Tajriba</h2>
+          <p className="about-text">
             Men 2 yillik tajribaga ega Frontend dasturchiman. Shu vaqt davomida zamonaviy veb texnologiyalarini chuqur o'rganib, ko'plab real loyihalarda ishtirok etdim. Asosiy maqsadim — foydalanuvchilar uchun qulay, tezkor va chiroyli interfeyslar yaratish.
           </p>
         </Reveal>
 
-        <Reveal delay={120} className="about-edu mt-8">
+        <Reveal delay={120} className="about-edu">
           <p className="eyebrow">Ta'lim</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-            <div className="p-4 rounded-xl bg-[rgba(17,34,64,0.5)] border border-[var(--border-color)] backdrop-blur-md">
-              <h3 className="text-white font-semibold mb-1 text-base">Najot Ta'lim</h3>
-              <p className="text-sm text-slate-400">Frontend Dasturlash (Bootcamp)</p>
+          <div className="edu-grid">
+            <div className="edu-card">
+              <h3>Najot Ta'lim</h3>
+              <p>Frontend Dasturlash (Bootcamp)</p>
             </div>
-            <div className="p-4 rounded-xl bg-[rgba(17,34,64,0.5)] border border-[var(--border-color)] backdrop-blur-md">
-              <h3 className="text-white font-semibold mb-1 text-base">IT Live</h3>
-              <p className="text-sm text-slate-400">Web Dasturlash Asoslari</p>
+            <div className="edu-card">
+              <h3>IT Live</h3>
+              <p>Web Dasturlash Asoslari</p>
             </div>
-            <div className="p-4 rounded-xl bg-[rgba(17,34,64,0.5)] border border-[var(--border-color)] backdrop-blur-md">
-              <h3 className="text-white font-semibold mb-1 text-base">IT Shaharcha</h3>
-              <p className="text-sm text-slate-400">Dasturlash va Texnologiyalar</p>
+            <div className="edu-card">
+              <h3>IT Shaharcha</h3>
+              <p>Dasturlash va Texnologiyalar</p>
             </div>
           </div>
         </Reveal>
       </div>
 
       <style>{`
-        .about-inner {
-          display: grid;
-          grid-template-columns: 1.4fr 0.9fr;
-          gap: 56px;
-        }
         .about-title {
           font-size: clamp(1.6rem, 3vw, 2.2rem);
-          margin-bottom: 20px;
-          max-width: 20ch;
+          margin: 0 0 24px;
         }
         .about-text {
           color: var(--ink-soft);
-          max-width: 62ch;
-          margin-bottom: 16px;
+          font-size: 1.1rem;
+          max-width: 65ch;
+          margin: 0 0 16px;
+        }
+        .about-edu {
+          margin-top: 48px;
+        }
+        .edu-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+          margin-top: 16px;
         }
         .edu-card {
-          border-left: 3px solid var(--forest);
-          padding: 4px 0 4px 20px;
-          transition: padding-left 0.25s ease, border-color 0.25s ease;
-        }
-        .about-edu.is-visible .edu-card:hover {
-          padding-left: 26px;
+          padding: 16px;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid var(--border-color);
+          border-radius: 12px;
+          backdrop-filter: blur(8px);
         }
         .edu-card h3 {
-          font-size: 1.1rem;
-          margin-bottom: 6px;
+          font-size: 1.05rem;
+          color: #ffffff;
+          margin: 0 0 4px;
         }
         .edu-card p {
+          font-size: 0.85rem;
           color: var(--ink-soft);
           margin: 0;
         }
-        @media (max-width: 780px) {
-          .about-inner {
+        @media (max-width: 768px) {
+          .edu-grid {
             grid-template-columns: 1fr;
-            gap: 32px;
           }
         }
       `}</style>
+      </div>
     </section>
   )
 }

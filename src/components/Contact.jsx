@@ -82,8 +82,8 @@ export default function Contact() {
 
       <style>{`
         .contact {
-          background: var(--forest-deep);
-          color: var(--snow);
+          background: var(--bg-main);
+          color: var(--ink);
         }
         .contact-inner {
           display: grid;
@@ -91,22 +91,22 @@ export default function Contact() {
           gap: 48px;
         }
         .contact-eyebrow {
-          color: var(--mint);
+          color: var(--accent);
         }
         .contact-title {
           font-size: clamp(1.6rem, 3vw, 2.2rem);
-          color: var(--snow);
+          color: var(--ink);
           margin: 0 0 16px;
           max-width: 16ch;
         }
         .contact-text {
-          color: var(--snow-dim);
+          color: var(--ink-soft);
           max-width: 46ch;
         }
         .contact-list {
           display: flex;
           flex-direction: column;
-          border-top: 1px solid rgba(247,251,249,0.14);
+          border-top: 1px solid var(--border-color);
         }
         a.contact-item {
           display: flex;
@@ -114,7 +114,7 @@ export default function Contact() {
           align-items: center;
           gap: 16px;
           padding: 18px 4px;
-          border-bottom: 1px solid rgba(247,251,249,0.14);
+          border-bottom: 1px solid var(--border-color);
           transition: background 0.2s ease, padding-left 0.25s ease;
         }
         a.contact-item.is-visible:hover {
@@ -126,17 +126,17 @@ export default function Contact() {
           gap: 10px;
         }
         .contact-icon {
-          color: var(--mint);
+          color: var(--accent);
           display: grid;
           place-items: center;
         }
         .contact-label {
-          color: var(--mint);
+          color: var(--accent);
           font-size: 0.85rem;
           font-weight: 700;
         }
         .contact-value {
-          color: var(--snow);
+          color: var(--ink);
           font-weight: 600;
           text-align: right;
         }

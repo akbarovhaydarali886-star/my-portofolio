@@ -21,7 +21,9 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container navbar-inner">
-        <a href="#home" className="navbar-logo">Haydarali</a>
+        <a href="#home" className="navbar-logo">
+          <span className="text-[var(--accent)]">HA</span> <span className="text-[var(--border-color)]">//</span> Software Engineer
+        </a>
 
         <nav className="navbar-links navbar-links-desktop">
           {LINKS.map((l) => (
@@ -73,10 +75,13 @@ export default function Navbar() {
         }
         .navbar-logo {
           font-family: var(--font-display);
-          font-size: 1.25rem;
-          font-weight: 600;
+          font-size: 1.15rem;
+          font-weight: 700;
           color: #ffffff;
           position: relative;
+          display: flex;
+          align-items: center;
+          gap: 8px;
         }
         .navbar-logo::after {
           content: '';

@@ -1,100 +1,49 @@
 import Reveal from './Reveal.jsx'
-import TechIcon, { TECH_STACK } from './TechIcons.jsx'
+
+const SKILL_GROUPS = [
+  {
+    title: 'Core & Languages',
+    items: ['TypeScript', 'ESNext', 'Go (Golang)']
+  },
+  {
+    title: 'Frontend Ecosystem',
+    items: ['React 19', 'Next.js (App Router)', 'Vue.js', 'State Machines', 'Tailwind CSS']
+  },
+  {
+    title: 'Backend & Data',
+    items: ['RESTful APIs', 'Webhooks', 'Goroutines/Concurrency', 'PostgreSQL', 'Redis']
+  },
+  {
+    title: 'DevOps & Performance',
+    items: ['Docker', 'CI/CD Actions', 'Web Vitals', 'Vercel Edge', 'Render']
+  }
+]
 
 export default function Skills() {
   return (
-    <section id="skills" className="skills">
-      <div className="container">
+    <section id="skills" className="py-24 relative overflow-hidden bg-[var(--bg-secondary)]">
+      <div className="container relative z-10">
         <Reveal>
-          <p className="eyebrow">Technical Stack</p>
-          <h2 className="skills-title">Core Technologies & Infrastructure</h2>
+          <p className="eyebrow text-[var(--accent)] tracking-widest text-sm font-semibold uppercase mb-2">Technical Matrix</p>
+          <h2 className="skills-title text-3xl md:text-5xl font-bold text-white mb-16">Tech Stack & Infrastructure</h2>
         </Reveal>
 
-        <div className="skills-grid">
-          {TECH_STACK.map((s, i) => (
-            <Reveal key={s.id} delay={i * 70} className="skill-chip">
-              <span className="skill-icon">
-                <TechIcon id={s.id} />
-              </span>
-              <span className="skill-copy">
-                <span className="skill-name">{s.name}</span>
-                <span className="skill-group">{s.group}</span>
-              </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {SKILL_GROUPS.map((group, i) => (
+            <Reveal key={group.title} delay={i * 100} className="flex flex-col">
+              <h3 className="text-xl font-semibold text-white mb-6 border-b border-[var(--border-color)] pb-3">{group.title}</h3>
+              <ul className="flex flex-col gap-3">
+                {group.items.map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-slate-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
+                    <span className="text-sm font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </Reveal>
           ))}
         </div>
       </div>
-
-      <style>{`
-        .skills {
-          background: var(--snow-dim);
-          overflow: hidden;
-        }
-        .skills-title {
-          font-size: clamp(1.6rem, 3vw, 2.2rem);
-          margin: 0 0 36px;
-          max-width: 24ch;
-        }
-        .skills-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 14px;
-        }
-        .skill-chip {
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: var(--radius);
-          padding: 18px 18px;
-          display: flex;
-          align-items: center;
-          gap: 14px;
-          transition: border-color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background 0.3s ease;
-        }
-        .skill-chip.is-visible:hover {
-          border-color: rgba(255, 255, 255, 0.3);
-          transform: translateY(-6px) scale(1.02);
-          background: rgba(255, 255, 255, 0.06);
-          box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
-        }
-        .skill-icon {
-          width: 52px;
-          height: 52px;
-          flex-shrink: 0;
-          display: grid;
-          place-items: center;
-          border-radius: 10px;
-          background: rgba(255, 255, 255, 0.05);
-          color: var(--ink);
-        }
-        .skill-chip:hover .skill-icon {
-          background: #ffffff;
-          color: #000000;
-        }
-        .skill-copy {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
-          min-width: 0;
-        }
-        .skill-name {
-          font-weight: 700;
-          color: var(--ink);
-        }
-        .skill-group {
-          font-size: 0.8rem;
-          color: var(--ink-soft);
-        }
-        @media (max-width: 780px) {
-          .skills-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-        @media (max-width: 460px) {
-          .skills-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
     </section>
   )
 }

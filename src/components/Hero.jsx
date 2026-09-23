@@ -14,16 +14,23 @@ export default function Hero() {
     <section id="home" className="hero on-dark">
       <div className="container hero-inner">
         <div className="hero-text">
-          <p className="eyebrow hero-eyebrow">Senior Software Engineer</p>
+          <div className="status-badge mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--border-color)] bg-[var(--bg-secondary)] text-sm font-medium text-[var(--ink-soft)]">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--accent)]"></span>
+            </span>
+            Available for High-Impact Roles
+          </div>
+          
           <h1 className="hero-name">Akbarov Haydarali</h1>
           <p className="hero-desc">
-            Architecting resilient, high-performance web applications and distributed backend systems. 
-            Specializing in React ecosystem performance, type-safe architectures, and scalable Go microservices. 
-            I build systems that bridge complex backend architectures with seamless, accessible frontend experiences.
+            Senior Frontend / Full-Stack Software Engineer
+            <br/><br/>
+            Architecting resilient, fault-tolerant web applications and high-throughput systems. Specialized in TypeScript, React/Next.js internals, Go concurrency, and sub-second Web Vitals.
           </p>
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">View Case Studies</a>
-            <a href="#contact" className="btn btn-ghost">Get in Touch</a>
+            <a href="#contact" className="btn btn-ghost">Resume / CV</a>
           </div>
           <div className="hero-stack" aria-label="Asosiy texnologiyalar">
             {TECH_STACK.slice(0, 6).map((t) => (
@@ -47,20 +54,20 @@ export default function Hero() {
           <svg viewBox="0 0 320 320" width="100%" height="100%">
             <defs>
               <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stopColor="#ffffff" stopOpacity="0.4" />
-                <stop offset="1" stopColor="#ffffff" stopOpacity="0.05" />
+                <stop offset="0" stopColor="#38bdf8" stopOpacity="0.4" />
+                <stop offset="1" stopColor="#00f2fe" stopOpacity="0.05" />
               </linearGradient>
             </defs>
             {Array.from({ length: 5 }).map((_, i) => (
-              <line key={`v${i}`} x1={i * 80} y1="0" x2={i * 80} y2="320" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+              <line key={`v${i}`} x1={i * 80} y1="0" x2={i * 80} y2="320" stroke="rgba(56, 189, 248, 0.15)" strokeWidth="1" />
             ))}
             {Array.from({ length: 5 }).map((_, i) => (
-              <line key={`h${i}`} x1="0" y1={i * 80} x2="320" y2={i * 80} stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+              <line key={`h${i}`} x1="0" y1={i * 80} x2="320" y2={i * 80} stroke="rgba(56, 189, 248, 0.15)" strokeWidth="1" />
             ))}
             <rect className="hero-box" x="80" y="80" width="160" height="160" fill="none" stroke="url(#g1)" strokeWidth="2" />
-            <circle cx="80" cy="80" r="5" fill="#ffffff" />
-            <circle cx="240" cy="240" r="5" fill="#ffffff" />
-            <rect x="120" y="120" width="80" height="80" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+            <circle cx="80" cy="80" r="4" fill="#38bdf8" />
+            <circle cx="240" cy="240" r="4" fill="#00f2fe" />
+            <rect x="120" y="120" width="80" height="80" fill="rgba(56, 189, 248, 0.05)" stroke="rgba(56, 189, 248, 0.3)" strokeWidth="1.5" />
           </svg>
         </div>
       </div>

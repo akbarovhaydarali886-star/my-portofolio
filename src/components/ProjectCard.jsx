@@ -3,26 +3,32 @@ export default function ProjectCard({ project }) {
 
   const CardInner = (
     <>
-      <div className="pcard-image">
+      <div className="aspect-[16/10] bg-black overflow-hidden relative">
         {image ? (
-          <img src={image} alt={title} loading="lazy" />
+          <img src={image} alt={title} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
         ) : (
-          <div className="pcard-placeholder" aria-hidden="true" />
+          <div className="w-full h-full bg-gradient-to-br from-[#0f172a] to-[#020617]" aria-hidden="true" />
         )}
       </div>
-      <div className="pcard-body">
-        <h3>{title}</h3>
-        {description && <p>{description}</p>}
+      <div className="p-6 md:p-8 flex flex-col flex-grow bg-[rgba(15,23,42,0.5)] backdrop-blur-md">
+        <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
+        {description && <p className="text-[var(--ink-soft)] text-sm mb-6 whitespace-pre-wrap leading-relaxed">{description}</p>}
         
         {tags && tags.length > 0 && (
-          <div className="pcard-tags">
+          <div className="flex flex-wrap gap-2 mb-6 mt-auto">
             {tags.map((t, idx) => (
-              <span key={idx} className="pcard-tag">{t}</span>
+              <span key={idx} className="text-xs font-semibold bg-[rgba(56,189,248,0.1)] text-[var(--accent)] px-3 py-1 rounded-full border border-[rgba(56,189,248,0.2)]">
+                {t}
+              </span>
             ))}
           </div>
         )}
 
-        {link && <span className="pcard-link">View Project →</span>}
+        {link && (
+          <span className="inline-flex items-center text-sm font-bold text-white group-hover:text-[var(--accent)] transition-colors">
+            View Project <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+          </span>
+        )}
       </div>
     </>
   )
@@ -30,91 +36,12 @@ export default function ProjectCard({ project }) {
   return (
     <>
       {link ? (
-        <a className="pcard" href={link} target="_blank" rel="noopener noreferrer">
+        <a className="group flex flex-col h-full rounded-2xl overflow-hidden border border-[var(--border-color)] hover:border-[var(--border-hover)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] hover:-translate-y-2 transition-all duration-300" href={link} target="_blank" rel="noopener noreferrer">
           {CardInner}
         </a>
       ) : (
-        <div className="pcard">{CardInner}</div>
+        <div className="group flex flex-col h-full rounded-2xl overflow-hidden border border-[var(--border-color)]">{CardInner}</div>
       )}
-
-      <style>{`
-        .pcard {
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: var(--radius);
-          overflow: hidden;
-          transition: border-color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-        }
-        a.pcard:hover {
-          border-color: rgba(255, 255, 255, 0.3);
-          transform: translateY(-8px) scale(1.02);
-          box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
-        }
-        .pcard-image {
-          aspect-ratio: 16 / 10;
-          background: rgba(0, 0, 0, 1);
-          overflow: hidden;
-        }
-        .pcard-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.45s ease;
-        }
-        a.pcard:hover .pcard-image img {
-          transform: scale(1.06);
-        }
-        .pcard-placeholder {
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, #111, #222);
-        }
-        .pcard-body {
-          padding: 20px 22px 24px;
-          display: flex;
-          flex-direction: column;
-          flex-grow: 1;
-        }
-        .pcard-body h3 {
-          font-size: 1.1rem;
-          margin-bottom: 8px;
-        }
-        .pcard-body p {
-          color: var(--ink-soft);
-          font-size: 0.92rem;
-          margin: 0 0 16px;
-          white-space: pre-wrap;
-          line-height: 1.6;
-        }
-        .pcard-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 6px;
-          margin-bottom: 18px;
-          margin-top: auto;
-        }
-        .pcard-tag {
-          font-size: 0.75rem;
-          font-weight: 600;
-          background: rgba(255, 255, 255, 0.1);
-          color: #ffffff;
-          padding: 4px 10px;
-          border-radius: 40px;
-        }
-        .pcard-link {
-          display: inline-block;
-          font-size: 0.85rem;
-          font-weight: 700;
-          color: #ffffff;
-          transition: transform 0.2s ease;
-        }
-        a.pcard:hover .pcard-link {
-          transform: translateX(4px);
-        }
-      `}</style>
     </>
   )
 }

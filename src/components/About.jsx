@@ -6,24 +6,34 @@ export default function About() {
       <div className="container about-inner">
         <Reveal>
           <p className="eyebrow">Engineering Philosophy</p>
-          <h2 className="about-title">Systems Thinking & Scalability</h2>
-          <p className="about-text">
-            I am a Software Engineer focused on building robust, scalable systems that bridge complex backend architectures with seamless frontend experiences. My engineering philosophy centers on type safety, aggressive performance optimization (Core Web Vitals), and distributed system design.
+          <h2 className="about-title text-4xl mb-6">Systems Thinking & Scalability</h2>
+          <p className="about-text text-[var(--ink-soft)] text-lg mb-4">
+            I am a Software Engineer focused on building robust, scalable systems that bridge complex backend architectures with seamless frontend experiences. My engineering philosophy centers on type safety, aggressive performance optimization, and distributed system design.
           </p>
-          <p className="about-text">
+          <p className="about-text text-[var(--ink-soft)] text-lg mb-6">
             I take end-to-end ownership of the product lifecycle—from designing concurrent API gateways in Go to engineering accessible, edge-rendered React applications. I believe in data-driven engineering: optimizing bundle sizes, reducing p99 latency, and ensuring fault tolerance in deployments.
           </p>
         </Reveal>
 
-        <Reveal delay={120} className="about-edu">
-          <p className="eyebrow">Core Competencies</p>
-          <div className="edu-card">
-            <h3>Architecture & Design</h3>
-            <p>Microservices, REST APIs, Edge Computing, CI/CD</p>
-          </div>
-          <div className="edu-card" style={{ marginTop: '16px' }}>
-            <h3>Frontend Performance</h3>
-            <p>Server-Side Rendering, Web Vitals, State Management</p>
+        <Reveal delay={120} className="about-edu mt-8">
+          <p className="eyebrow">Core Principles</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            <div className="p-4 rounded-xl bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] backdrop-blur-md">
+              <h3 className="text-white font-semibold mb-1 text-base">System Design & Modularity</h3>
+              <p className="text-sm text-slate-400">Microservices, Event-driven architecture, Scalability</p>
+            </div>
+            <div className="p-4 rounded-xl bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] backdrop-blur-md">
+              <h3 className="text-white font-semibold mb-1 text-base">Performance-First</h3>
+              <p className="text-sm text-slate-400">Core Web Vitals, LCP &lt; 0.8s, Edge caching</p>
+            </div>
+            <div className="p-4 rounded-xl bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] backdrop-blur-md">
+              <h3 className="text-white font-semibold mb-1 text-base">CI/CD & DevOps</h3>
+              <p className="text-sm text-slate-400">Docker, GitHub Actions, Zero-downtime deployments</p>
+            </div>
+            <div className="p-4 rounded-xl bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] backdrop-blur-md">
+              <h3 className="text-white font-semibold mb-1 text-base">Test-Driven Development</h3>
+              <p className="text-sm text-slate-400">Jest, Playwright, High test coverage, E2E</p>
+            </div>
           </div>
         </Reveal>
       </div>

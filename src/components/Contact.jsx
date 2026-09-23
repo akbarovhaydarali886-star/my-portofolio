@@ -52,10 +52,10 @@ export default function Contact() {
     <section id="contact" className="contact on-dark">
       <div className="container contact-inner">
         <Reveal>
-          <p className="eyebrow contact-eyebrow">Connect</p>
-          <h2 className="contact-title">Let's Build Scalable Systems.</h2>
+          <p className="eyebrow contact-eyebrow">Aloqa</p>
+          <h2 className="contact-title">Loyihangiz bormi? Yozing.</h2>
           <p className="contact-text">
-            Whether you are solving a complex system design challenge, architecting a high-throughput platform, or looking for technical leadership, feel free to reach out. I prioritize performance, maintainability, and clean code.
+            Yangi loyihalar va hamkorlik uchun doim ochiqman. Menga elektron pochta orqali yoki Telegramdan yozishingiz mumkin. Tez orada javob berishga harakat qilaman.
           </p>
         </Reveal>
 

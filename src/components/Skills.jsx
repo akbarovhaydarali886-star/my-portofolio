@@ -1,45 +1,25 @@
 import Reveal from './Reveal.jsx'
-
-const SKILL_GROUPS = [
-  {
-    title: 'Core & Languages',
-    items: ['TypeScript', 'ESNext', 'Go (Golang)']
-  },
-  {
-    title: 'Frontend Ecosystem',
-    items: ['React 19', 'Next.js (App Router)', 'Vue.js', 'State Machines', 'Tailwind CSS']
-  },
-  {
-    title: 'Backend & Data',
-    items: ['RESTful APIs', 'Webhooks', 'Goroutines/Concurrency', 'PostgreSQL', 'Redis']
-  },
-  {
-    title: 'DevOps & Performance',
-    items: ['Docker', 'CI/CD Actions', 'Web Vitals', 'Vercel Edge', 'Render']
-  }
-]
+import TechIcon, { TECH_STACK } from './TechIcons.jsx'
 
 export default function Skills() {
   return (
     <section id="skills" className="py-24 relative overflow-hidden bg-[var(--bg-secondary)]">
       <div className="container relative z-10">
         <Reveal>
-          <p className="eyebrow text-[var(--accent)] tracking-widest text-sm font-semibold uppercase mb-2">Technical Matrix</p>
-          <h2 className="skills-title text-3xl md:text-5xl font-bold text-white mb-16">Tech Stack & Infrastructure</h2>
+          <p className="eyebrow text-[var(--accent)] tracking-widest text-sm font-semibold uppercase mb-2">Ko'nikmalar</p>
+          <h2 className="skills-title text-3xl md:text-5xl font-bold text-white mb-16">Texnologiyalar & Vositalar</h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {SKILL_GROUPS.map((group, i) => (
-            <Reveal key={group.title} delay={i * 100} className="flex flex-col">
-              <h3 className="text-xl font-semibold text-white mb-6 border-b border-[var(--border-color)] pb-3">{group.title}</h3>
-              <ul className="flex flex-col gap-3">
-                {group.items.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-slate-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"></span>
-                    <span className="text-sm font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {TECH_STACK.map((s, i) => (
+            <Reveal key={s.id} delay={i * 70} className="flex items-center gap-4 bg-[rgba(255,255,255,0.02)] border border-[var(--border-color)] p-4 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:border-[var(--border-hover)] hover:bg-[rgba(255,255,255,0.06)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.3)] group">
+              <span className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-[rgba(255,255,255,0.05)] text-white group-hover:bg-white group-hover:text-black transition-colors">
+                <TechIcon id={s.id} />
+              </span>
+              <span className="flex flex-col min-w-0">
+                <span className="font-bold text-white group-hover:text-[var(--accent)] transition-colors">{s.name}</span>
+                <span className="text-xs text-[var(--ink-soft)]">{s.group}</span>
+              </span>
             </Reveal>
           ))}
         </div>

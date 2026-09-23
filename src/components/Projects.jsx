@@ -7,8 +7,8 @@ export default function Projects() {
     <section id="projects" className="py-24 bg-[var(--bg-main)]">
       <div className="container">
         <Reveal>
-          <p className="eyebrow">Engineering</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-12">Featured Case Studies</h2>
+          <p className="eyebrow">Loyihalar</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-12">So'nggi Ishlarim</h2>
         </Reveal>
 
         {projects.length === 0 ? (

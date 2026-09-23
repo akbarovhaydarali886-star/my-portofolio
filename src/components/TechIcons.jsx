@@ -110,14 +110,52 @@ export function ApiIcon() {
   )
 }
 
+export function HtmlIcon() {
+  return (
+    <Svg className="icon-html">
+      <path d="M12 10 L15 36 L24 39 L33 36 L36 10 Z" fill="#E34F26" />
+      <path d="M24 13 V36.5 L30.5 34.5 L32.5 13 Z" fill="#EF652A" />
+      <path d="M16.5 17 H24 V20.5 H17 L17.5 24 H24 V27.5 H18.5 L19 29 L24 30.5 V34 L16 32 Z" fill="#FFF" />
+    </Svg>
+  )
+}
+
+export function CssIcon() {
+  return (
+    <Svg className="icon-css">
+      <path d="M12 10 L15 36 L24 39 L33 36 L36 10 Z" fill="#1572B6" />
+      <path d="M24 13 V36.5 L30.5 34.5 L32.5 13 Z" fill="#33A9DC" />
+      <path d="M16.5 17 H24 V20.5 H17.5 L18 24 H24 V27.5 H18.5 L19 29 L24 30.5 V34 L16 32 Z" fill="#FFF" />
+    </Svg>
+  )
+}
+
+export function ScssIcon() {
+  return (
+    <Svg className="icon-scss">
+      <path d="M24 10 C16 10 14 14 14 18 C14 24 24 22 24 26 C24 28 22 30 18 30 C15 30 13 28 12 25 L9 27 C11 31 15 33 19 33 C27 33 29 28 29 25 C29 19 19 21 19 17 C19 15 21 13 24 13 C27 13 29 15 30 18 L33 16 C31 12 28 10 24 10 Z" fill="#CC6699" />
+    </Svg>
+  )
+}
+
+export function BootstrapIcon() {
+  return (
+    <Svg className="icon-bootstrap">
+      <path d="M12 12 Q12 8 16 8 H32 Q36 8 36 12 V36 Q36 40 32 40 H16 Q12 40 12 36 Z" fill="#7952B3" />
+      <path d="M18 16 H24 Q28 16 28 20 Q28 23 25 24 Q29 25 29 29 Q29 34 24 34 H18 Z M22 20 V23 H24 Q25 23 25 21 Q25 20 24 20 Z M22 26 V30 H25 Q26 30 26 28 Q26 26 25 26 Z" fill="#FFF" />
+    </Svg>
+  )
+}
+
 const ICONS = {
-  ts: TsIcon,
-  tailwind: TailwindIcon,
-  go: GoIcon,
+  html: HtmlIcon,
+  css: CssIcon,
   js: JsIcon,
   react: ReactIcon,
   vue: VueIcon,
   next: NextIcon,
+  scss: ScssIcon,
+  bootstrap: BootstrapIcon,
   ux: UxIcon,
   api: ApiIcon,
 }
@@ -128,13 +166,14 @@ export default function TechIcon({ id }) {
 }
 
 export const TECH_STACK = [
-  { id: 'ts', name: 'TypeScript', group: 'Languages' },
-  { id: 'js', name: 'JavaScript', group: 'Languages' },
-  { id: 'go', name: 'Go (Golang)', group: 'Languages' },
-  { id: 'react', name: 'React.js', group: 'Frameworks' },
-  { id: 'next', name: 'Next.js', group: 'Frameworks' },
-  { id: 'vue', name: 'Vue.js', group: 'Frameworks' },
-  { id: 'tailwind', name: 'Tailwind CSS', group: 'Styling' },
-  { id: 'ux', name: 'System Design', group: 'Architecture' },
-  { id: 'api', name: 'Distributed APIs', group: 'Infrastructure' },
+  { id: 'html', name: 'HTML5', group: 'Markup' },
+  { id: 'css', name: 'CSS3', group: 'Styling' },
+  { id: 'js', name: 'JavaScript', group: 'Language' },
+  { id: 'react', name: 'React.js', group: 'Framework' },
+  { id: 'vue', name: 'Vue.js', group: 'Framework' },
+  { id: 'next', name: 'Next.js', group: 'Framework' },
+  { id: 'scss', name: 'SCSS', group: 'Styling' },
+  { id: 'bootstrap', name: 'Bootstrap', group: 'Styling' },
+  { id: 'ux', name: 'UI/UX Design', group: 'Design' },
+  { id: 'api', name: 'REST API', group: 'Backend' },
 ]

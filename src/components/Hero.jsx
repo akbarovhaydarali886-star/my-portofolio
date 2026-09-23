@@ -19,18 +19,18 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--accent)]"></span>
             </span>
-            Available for High-Impact Roles
+            2 yillik tajribaga ega dasturchi
           </div>
           
           <h1 className="hero-name">Akbarov Haydarali</h1>
           <p className="hero-desc">
-            Senior Frontend / Full-Stack Software Engineer
+            Frontend Web Dasturchi
             <br/><br/>
-            Architecting resilient, fault-tolerant web applications and high-throughput systems. Specialized in TypeScript, React/Next.js internals, Go concurrency, and sub-second Web Vitals.
+            Zamonaviy va qulay veb-saytlar hamda web-ilovalarni yaratish bo'yicha mutaxassis. HTML, CSS, JavaScript, React, va Next.js orqali interaktiv va sifatli UI/UX dizaynlarni kodga o'g'iraman.
           </p>
           <div className="hero-actions">
-            <a href="#projects" className="btn btn-primary">View Case Studies</a>
-            <a href="#contact" className="btn btn-ghost">Resume / CV</a>
+            <a href="#projects" className="btn btn-primary">Loyihalarni ko'rish</a>
+            <a href="#contact" className="btn btn-ghost">Bog'lanish</a>
           </div>
           <div className="hero-stack" aria-label="Asosiy texnologiyalar">
             {TECH_STACK.slice(0, 6).map((t) => (
@@ -54,20 +54,20 @@ export default function Hero() {
           <svg viewBox="0 0 320 320" width="100%" height="100%">
             <defs>
               <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stopColor="#38bdf8" stopOpacity="0.4" />
-                <stop offset="1" stopColor="#00f2fe" stopOpacity="0.05" />
+                <stop offset="0" stopColor="#ffd700" stopOpacity="0.4" />
+                <stop offset="1" stopColor="#ffd700" stopOpacity="0.05" />
               </linearGradient>
             </defs>
             {Array.from({ length: 5 }).map((_, i) => (
-              <line key={`v${i}`} x1={i * 80} y1="0" x2={i * 80} y2="320" stroke="rgba(56, 189, 248, 0.15)" strokeWidth="1" />
+              <line key={`v${i}`} x1={i * 80} y1="0" x2={i * 80} y2="320" stroke="rgba(255, 215, 0, 0.15)" strokeWidth="1" />
             ))}
             {Array.from({ length: 5 }).map((_, i) => (
-              <line key={`h${i}`} x1="0" y1={i * 80} x2="320" y2={i * 80} stroke="rgba(56, 189, 248, 0.15)" strokeWidth="1" />
+              <line key={`h${i}`} x1="0" y1={i * 80} x2="320" y2={i * 80} stroke="rgba(255, 215, 0, 0.15)" strokeWidth="1" />
             ))}
             <rect className="hero-box" x="80" y="80" width="160" height="160" fill="none" stroke="url(#g1)" strokeWidth="2" />
-            <circle cx="80" cy="80" r="4" fill="#38bdf8" />
-            <circle cx="240" cy="240" r="4" fill="#00f2fe" />
-            <rect x="120" y="120" width="80" height="80" fill="rgba(56, 189, 248, 0.05)" stroke="rgba(56, 189, 248, 0.3)" strokeWidth="1.5" />
+            <circle cx="80" cy="80" r="4" fill="#ffd700" />
+            <circle cx="240" cy="240" r="4" fill="#ffd700" />
+            <rect x="120" y="120" width="80" height="80" fill="rgba(255, 215, 0, 0.05)" stroke="rgba(255, 215, 0, 0.3)" strokeWidth="1.5" />
           </svg>
         </div>
       </div>

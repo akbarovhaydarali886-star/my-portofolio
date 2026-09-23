@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 
 const LINKS = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'Philosophy' },
-  { href: '#skills', label: 'Stack' },
-  { href: '#projects', label: 'Case Studies' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#home', label: 'Bosh sahifa' },
+  { href: '#about', label: 'Men haqimda' },
+  { href: '#skills', label: 'Ko\'nikmalar' },
+  { href: '#projects', label: 'Loyihalar' },
+  { href: '#contact', label: 'Aloqa' },
 ]
 
 export default function Navbar() {
@@ -22,7 +22,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container navbar-inner">
         <a href="#home" className="navbar-logo">
-          <span className="text-[var(--accent)]">HA</span> <span className="text-[var(--border-color)]">//</span> Software Engineer
+          Haydarali
         </a>
 
         <nav className="navbar-links navbar-links-desktop">
@@ -75,13 +75,10 @@ export default function Navbar() {
         }
         .navbar-logo {
           font-family: var(--font-display);
-          font-size: 1.15rem;
+          font-size: 1.25rem;
           font-weight: 700;
           color: #ffffff;
           position: relative;
-          display: flex;
-          align-items: center;
-          gap: 8px;
         }
         .navbar-logo::after {
           content: '';

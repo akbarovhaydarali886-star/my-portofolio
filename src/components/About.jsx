@@ -5,34 +5,27 @@ export default function About() {
     <section id="about" className="about">
       <div className="container about-inner">
         <Reveal>
-          <p className="eyebrow">Engineering Philosophy</p>
-          <h2 className="about-title text-4xl mb-6">Systems Thinking & Scalability</h2>
+          <p className="eyebrow">Men haqimda</p>
+          <h2 className="about-title text-4xl mb-6">Ta'lim va Tajriba</h2>
           <p className="about-text text-[var(--ink-soft)] text-lg mb-4">
-            I am a Software Engineer focused on building robust, scalable systems that bridge complex backend architectures with seamless frontend experiences. My engineering philosophy centers on type safety, aggressive performance optimization, and distributed system design.
-          </p>
-          <p className="about-text text-[var(--ink-soft)] text-lg mb-6">
-            I take end-to-end ownership of the product lifecycle—from designing concurrent API gateways in Go to engineering accessible, edge-rendered React applications. I believe in data-driven engineering: optimizing bundle sizes, reducing p99 latency, and ensuring fault tolerance in deployments.
+            Men 2 yillik tajribaga ega Frontend dasturchiman. Shu vaqt davomida zamonaviy veb texnologiyalarini chuqur o'rganib, ko'plab real loyihalarda ishtirok etdim. Asosiy maqsadim — foydalanuvchilar uchun qulay, tezkor va chiroyli interfeyslar yaratish.
           </p>
         </Reveal>
 
         <Reveal delay={120} className="about-edu mt-8">
-          <p className="eyebrow">Core Principles</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-            <div className="p-4 rounded-xl bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] backdrop-blur-md">
-              <h3 className="text-white font-semibold mb-1 text-base">System Design & Modularity</h3>
-              <p className="text-sm text-slate-400">Microservices, Event-driven architecture, Scalability</p>
+          <p className="eyebrow">Ta'lim</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+            <div className="p-4 rounded-xl bg-[rgba(17,34,64,0.5)] border border-[var(--border-color)] backdrop-blur-md">
+              <h3 className="text-white font-semibold mb-1 text-base">Najot Ta'lim</h3>
+              <p className="text-sm text-slate-400">Frontend Dasturlash (Bootcamp)</p>
             </div>
-            <div className="p-4 rounded-xl bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] backdrop-blur-md">
-              <h3 className="text-white font-semibold mb-1 text-base">Performance-First</h3>
-              <p className="text-sm text-slate-400">Core Web Vitals, LCP &lt; 0.8s, Edge caching</p>
+            <div className="p-4 rounded-xl bg-[rgba(17,34,64,0.5)] border border-[var(--border-color)] backdrop-blur-md">
+              <h3 className="text-white font-semibold mb-1 text-base">IT Live</h3>
+              <p className="text-sm text-slate-400">Web Dasturlash Asoslari</p>
             </div>
-            <div className="p-4 rounded-xl bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] backdrop-blur-md">
-              <h3 className="text-white font-semibold mb-1 text-base">CI/CD & DevOps</h3>
-              <p className="text-sm text-slate-400">Docker, GitHub Actions, Zero-downtime deployments</p>
-            </div>
-            <div className="p-4 rounded-xl bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] backdrop-blur-md">
-              <h3 className="text-white font-semibold mb-1 text-base">Test-Driven Development</h3>
-              <p className="text-sm text-slate-400">Jest, Playwright, High test coverage, E2E</p>
+            <div className="p-4 rounded-xl bg-[rgba(17,34,64,0.5)] border border-[var(--border-color)] backdrop-blur-md">
+              <h3 className="text-white font-semibold mb-1 text-base">IT Shaharcha</h3>
+              <p className="text-sm text-slate-400">Dasturlash va Texnologiyalar</p>
             </div>
           </div>
         </Reveal>

@@ -40,7 +40,7 @@ export default function Projects() {
         }
         .projects-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
           gap: 32px;
         }
         .projects-empty {

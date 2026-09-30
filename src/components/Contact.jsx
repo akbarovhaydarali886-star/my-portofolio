@@ -55,10 +55,43 @@ export default function Contact() {
           <p className="contact-text">
             Yangi loyihalar va hamkorlik uchun doim ochiqman. Menga elektron pochta orqali yoki Telegramdan yozishingiz mumkin. Tez orada javob berishga harakat qilaman.
           </p>
-          <div style={{ marginTop: '24px' }}>
+          <div style={{ marginTop: '24px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             <a href="/Akbarov_Haydarali_CV.pdf" download="Akbarov_Haydarali_CV.pdf" className="btn btn-primary">
               Rezyume (CV) yuklab olish ⬇
             </a>
+            <a 
+              href="https://t.me/haydaraliportfolio_bot" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-ghost tg-bot-btn"
+            >
+              🤖 Telegram Bot orqali buyurtma berish
+            </a>
+          </div>
+
+          <div className="bot-card-preview">
+            <div className="bot-card-badge">
+              <span className="dot-pulse"></span> @haydaraliportfolio_bot
+            </div>
+            <p className="bot-card-title">Loyihangiz uchun tezkor buyurtma bering</p>
+            <p className="bot-card-desc">Botga kiring, o'zingiz va loyihangiz haqida ma'lumot bering va mos texnologiyani tanlang:</p>
+            <div className="bot-tech-pills">
+              <span className="bot-tech-pill react-pill">⚛️ React.js <small>(Qiyin ishlar uchun)</small></span>
+              <span className="bot-tech-pill next-pill">▲ Next.js <small>(Oson ishlar uchun)</small></span>
+              <span className="bot-tech-pill vue-pill">🟢 Vue.js <small>(Oson ishlar uchun)</small></span>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '12px', flexWrap: 'wrap', gap: '8px' }}>
+              <p className="bot-card-footer">📢 Barcha arizalar zudlik bilan Telegram kanalga yuboriladi</p>
+              <a 
+                href="https://t.me/haydaraliportfolio_bot" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-primary"
+                style={{ fontSize: '0.85rem', padding: '6px 14px' }}
+              >
+                Botni ochish ↗
+              </a>
+            </div>
           </div>
         </Reveal>
 
@@ -142,6 +175,93 @@ export default function Contact() {
           color: var(--ink);
           font-weight: 600;
           text-align: right;
+        }
+        .tg-bot-btn {
+          border-color: #229ED9;
+          color: #229ED9;
+          background: rgba(34, 158, 217, 0.08);
+          transition: all 0.25s ease;
+        }
+        .tg-bot-btn:hover {
+          background: rgba(34, 158, 217, 0.2);
+          border-color: #229ED9;
+          transform: translateY(-2px);
+        }
+        .bot-card-preview {
+          margin-top: 28px;
+          padding: 20px;
+          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          position: relative;
+        }
+        .bot-card-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 0.78rem;
+          font-weight: 600;
+          color: #229ED9;
+          background: rgba(34, 158, 217, 0.12);
+          padding: 3px 10px;
+          border-radius: 999px;
+          margin-bottom: 12px;
+        }
+        .dot-pulse {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: #229ED9;
+          box-shadow: 0 0 8px #229ED9;
+        }
+        .bot-card-title {
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: var(--ink);
+          margin: 0 0 6px;
+        }
+        .bot-card-desc {
+          font-size: 0.88rem;
+          color: var(--ink-soft);
+          margin: 0 0 14px;
+        }
+        .bot-tech-pills {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          margin-bottom: 14px;
+        }
+        .bot-tech-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 7px 12px;
+          border-radius: 8px;
+          font-size: 0.88rem;
+          font-weight: 600;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: var(--ink);
+        }
+        .bot-tech-pill small {
+          font-size: 0.75rem;
+          font-weight: 400;
+          color: var(--ink-soft);
+        }
+        .react-pill {
+          border-color: rgba(97, 218, 251, 0.3);
+        }
+        .next-pill {
+          border-color: rgba(255, 255, 255, 0.25);
+        }
+        .vue-pill {
+          border-color: rgba(66, 184, 131, 0.35);
+        }
+        .bot-card-footer {
+          font-size: 0.8rem;
+          color: var(--accent);
+          margin: 0;
+          font-weight: 500;
         }
         @media (max-width: 780px) {
           .contact-inner {

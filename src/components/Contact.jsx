@@ -6,9 +6,9 @@ const CONTACTS = [
     value: 'akbarovhaydarali886@gmail.com',
     href: 'mailto:akbarovhaydarali886@gmail.com',
     icon: (
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
-        <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.8" />
-        <path d="M4 7 L12 13 L20 7" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
       </svg>
     ),
   },
@@ -17,8 +17,8 @@ const CONTACTS = [
     value: '+998 88 083 19 88',
     href: 'tel:+998880831988',
     icon: (
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
-        <path d="M7 3 H11 L12.5 7 L10 8.5 C11 11 13 13 15.5 14 L17 11.5 L21 13 V17 C21 18 20 19 19 19 C11 19 5 13 5 5 C5 4 6 3 7 3 Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
       </svg>
     ),
   },
@@ -27,8 +27,9 @@ const CONTACTS = [
     value: '@haydaraliakbarov',
     href: 'https://t.me/haydaraliakbarov',
     icon: (
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
-        <path d="M4 12 L20 5 L16 19 L11 14 L7 17 Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
       </svg>
     ),
   },
@@ -37,11 +38,8 @@ const CONTACTS = [
     value: 'akbarovhaydarali886-star',
     href: 'https://github.com/akbarovhaydarali886-star',
     icon: (
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
-        <path d="M9 19 C9 16 10 15 12 15 C14 15 15 16 15 19" stroke="currentColor" strokeWidth="1.8" />
-        <circle cx="9" cy="11" r="1" fill="currentColor" />
-        <circle cx="15" cy="11" r="1" fill="currentColor" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
       </svg>
     ),
   },

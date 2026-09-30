@@ -57,6 +57,11 @@ export default function Contact() {
           <p className="contact-text">
             Yangi loyihalar va hamkorlik uchun doim ochiqman. Menga elektron pochta orqali yoki Telegramdan yozishingiz mumkin. Tez orada javob berishga harakat qilaman.
           </p>
+          <div style={{ marginTop: '24px' }}>
+            <a href="/Akbarov_Haydarali_CV.pdf" download="Akbarov_Haydarali_CV.pdf" className="btn btn-primary">
+              Rezyume (CV) yuklab olish ⬇
+            </a>
+          </div>
         </Reveal>
 
         <div className="contact-list">

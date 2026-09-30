@@ -30,7 +30,7 @@ export default function Hero() {
           </p>
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">Loyihalarni ko'rish</a>
-            <a href="#contact" className="btn btn-ghost">Bog'lanish</a>
+            <a href="/Akbarov_Haydarali_CV.pdf" download="Akbarov_Haydarali_CV.pdf" className="btn btn-ghost">CV yuklab olish ⬇</a>
           </div>
           <div className="hero-stack" aria-label="Asosiy texnologiyalar">
             {TECH_STACK.slice(0, 6).map((t) => (

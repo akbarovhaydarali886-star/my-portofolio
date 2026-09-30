@@ -58,7 +58,7 @@ export default function Navbar() {
           position: sticky;
           top: 0;
           z-index: 50;
-          background: rgba(0, 0, 0, 0.85);
+          background: rgba(10, 25, 47, 0.85);
           backdrop-filter: saturate(180%) blur(10px);
           border-bottom: 1px solid transparent;
           transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.25s ease;

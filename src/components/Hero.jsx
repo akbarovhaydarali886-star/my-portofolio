@@ -74,8 +74,8 @@ export default function Hero() {
 
       <style>{`
         .hero {
-          background: var(--forest-deep);
-          color: var(--snow);
+          background: var(--bg-main);
+          color: var(--ink);
           padding: 72px 0 88px;
         }
         .hero-inner {
@@ -85,20 +85,20 @@ export default function Hero() {
           gap: 48px;
         }
         .hero-eyebrow {
-          color: var(--mint);
+          color: var(--accent);
           font-weight: 600;
           animation: fade-in-up 0.7s both;
         }
         .hero-name {
           font-size: clamp(2.4rem, 5vw, 4rem);
           line-height: 1.05;
-          color: var(--snow);
+          color: var(--ink);
           margin-bottom: 20px;
           animation: fade-in-up 0.8s 0.08s both;
         }
         .hero-desc {
           max-width: 62ch;
-          color: var(--snow-dim);
+          color: var(--ink-soft);
           font-size: 1.05rem;
           animation: fade-in-up 0.8s 0.16s both;
         }
@@ -123,7 +123,7 @@ export default function Hero() {
           place-items: center;
           border: 1px solid rgba(255, 255, 255, 0.15);
           border-radius: 10px;
-          color: var(--snow);
+          color: var(--ink);
           background: rgba(255, 255, 255, 0.03);
           transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
         }
@@ -151,7 +151,7 @@ export default function Hero() {
           border-radius: 50%;
           background: #000000;
           border: 1px solid rgba(255, 255, 255, 0.2);
-          color: var(--snow);
+          color: var(--ink);
           animation: float-y 3.4s ease-in-out infinite;
           z-index: 1;
         }

@@ -1,11 +1,13 @@
+import { useLanguage } from '../context/LanguageContext'
 import Reveal from './Reveal.jsx'
 
 export default function About() {
+  const { t } = useLanguage();
   return (
     <section id="about" className="about">
       <div className="container about-inner">
         <Reveal>
-          <p className="eyebrow">Men haqimda</p>
+          <p className="eyebrow">{t("about_eyebrow")}</p>
           <h2 className="about-title">Ta'lim va Tajriba</h2>
           <p className="about-text">
             Men 2 yillik tajribaga ega Frontend dasturchiman. Shu vaqt davomida zamonaviy veb texnologiyalarini chuqur o'rganib, ko'plab real loyihalarda ishtirok etdim. Asosiy maqsadim — foydalanuvchilar uchun qulay, tezkor va chiroyli interfeyslar yaratish.

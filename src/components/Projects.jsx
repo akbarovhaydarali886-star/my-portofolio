@@ -1,13 +1,15 @@
+import { useLanguage } from '../context/LanguageContext'
 import { projects } from '../data/projects.js'
 import ProjectCard from './ProjectCard.jsx'
 import Reveal from './Reveal.jsx'
 
 export default function Projects() {
+  const { t } = useLanguage();
   return (
     <section id="projects" className="projects">
       <div className="container">
         <Reveal>
-          <p className="eyebrow">Loyihalar</p>
+          <p className="eyebrow">{t("projects_eyebrow")}</p>
           <h2 className="projects-title">So'nggi Ishlarim</h2>
         </Reveal>
 

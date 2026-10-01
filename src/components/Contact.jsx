@@ -1,3 +1,4 @@
+import { useLanguage } from '../context/LanguageContext'
 import Reveal from './Reveal.jsx'
 
 const CONTACTS = [
@@ -46,13 +47,14 @@ const CONTACTS = [
 ]
 
 export default function Contact() {
+  const { t } = useLanguage();
   return (
     <section id="contact" className="contact on-dark">
       <div className="container">
         <div className="contact-inner">
           <Reveal>
-            <p className="eyebrow contact-eyebrow">Aloqa</p>
-            <h2 className="contact-title">Loyihangiz bormi? Yozing.</h2>
+            <p className="eyebrow contact-eyebrow">{t("contact_eyebrow")}</p>
+            <h2 className="contact-title">{t("contact_title")}</h2>
             <p className="contact-text">
               Yangi loyihalar va hamkorlik uchun doim ochiqman. Menga elektron pochta orqali yoki Telegramdan yozishingiz mumkin. Tez orada javob berishga harakat qilaman.
             </p>
@@ -90,7 +92,7 @@ export default function Contact() {
                 className="contact-bot-outline-btn"
               >
                 <span className="bot-icon">🤖</span>
-                <span>Telegram Bot orqali buyurtma berish</span>
+                <span>{t("contact_btn_bot")}</span>
               </a>
             </Reveal>
           </div>

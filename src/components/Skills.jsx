@@ -1,12 +1,14 @@
+import { useLanguage } from '../context/LanguageContext'
 import Reveal from './Reveal.jsx'
 import TechIcon, { TECH_STACK } from './TechIcons.jsx'
 
 export default function Skills() {
+  const { t } = useLanguage();
   return (
     <section id="skills" className="skills">
       <div className="container relative z-10">
         <Reveal>
-          <p className="eyebrow">Ko'nikmalar</p>
+          <p className="eyebrow">{t("skills_eyebrow")}</p>
           <h2 className="skills-title">Texnologiyalar & Vositalar</h2>
         </Reveal>
 

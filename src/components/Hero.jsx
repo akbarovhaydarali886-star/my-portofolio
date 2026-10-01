@@ -1,3 +1,4 @@
+import { useLanguage } from '../context/LanguageContext'
 import TechIcon, { TECH_STACK } from './TechIcons.jsx'
 
 const ORBIT = [
@@ -10,6 +11,7 @@ const ORBIT = [
 ]
 
 export default function Hero() {
+  const { t } = useLanguage();
   return (
     <section id="home" className="hero on-dark">
       <div className="container hero-inner">
@@ -29,8 +31,8 @@ export default function Hero() {
             Zamonaviy va qulay veb-saytlar hamda web-ilovalarni yaratish bo'yicha mutaxassis. HTML, CSS, JavaScript, React, va Next.js orqali interaktiv va sifatli UI/UX dizaynlarni kodga o'g'iraman.
           </p>
           <div className="hero-actions">
-            <a href="#projects" className="btn btn-primary">Loyihalarni ko'rish</a>
-            <a href="/Akbarov_Haydarali_CV.pdf" download="Akbarov_Haydarali_CV.pdf" className="btn btn-ghost">CV yuklab olish ⬇</a>
+            <a href="#projects" className="btn btn-primary">{t("hero_btn_projects")}</a>
+            <a href="/Akbarov_Haydarali_CV.pdf" download="Akbarov_Haydarali_CV.pdf" className="btn btn-ghost">{t("hero_btn_cv")}</a>
           </div>
           <div className="hero-stack" aria-label="Asosiy texnologiyalar">
             {TECH_STACK.slice(0, 6).map((t) => (

@@ -34,6 +34,21 @@ const CONTACTS = [
     ),
   },
   {
+    label: 'Telegram Bot',
+    value: '@haydaraliportfolio_bot',
+    href: 'https://t.me/haydaraliportfolio_bot',
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="8" width="16" height="12" rx="2"></rect>
+        <path d="M12 8V4"></path>
+        <circle cx="12" cy="3" r="1"></circle>
+        <path d="M8 14h.01"></path>
+        <path d="M16 14h.01"></path>
+        <path d="M10 18h4"></path>
+      </svg>
+    ),
+  },
+  {
     label: 'GitHub',
     value: 'akbarovhaydarali886-star',
     href: 'https://github.com/akbarovhaydarali886-star',

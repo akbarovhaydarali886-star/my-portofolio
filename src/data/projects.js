@@ -26,7 +26,7 @@ export const projects = [
     link: 'https://t.me/kalodez_zakaz_bot',
     github: 'https://github.com/akbarovhaydarali886-star/kalodes.telegrambot',
     image: '/kalodez-zakaz-bot.jpg',
-    technologies: ['JavaScript', 'REST API'],
+    technologies: ['Go', 'JavaScript', 'REST API'],
     tools: ['Telegram API', 'Webhooks']
   },
   {
@@ -46,7 +46,7 @@ export const projects = [
     link: 'https://t.me/haydaraliportfolio_bot',
     github: 'https://github.com/akbarovhaydarali886-star/my-portofolio-bot-',
     image: '/portfolio-bot.png',
-    technologies: ['JavaScript'],
+    technologies: ['Go', 'JavaScript'],
     tools: ['Telegram API']
   }
 ];

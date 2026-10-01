@@ -18,6 +18,9 @@ export const translations = {
     proj_1_title: 'FleetFlow Logistics SaaS', proj_1_desc: 'Logistika va yuk tashish kompaniyalari uchun zamonaviy SaaS platformasi. Real vaqt rejimida yuklarni kuzatish va biznes jarayonlarini boshqarish tizimi.',
     proj_2_title: 'Kalodez Web Platform', proj_2_desc: 'Landing page va biznes uchun veb-sayt. Zamonaviy dizayn va yuqori tezlikka ega. Responsive va animatsiyalarga boy interfeys yaratilgan.',
     proj_3_title: 'Kalodez Bot', proj_3_desc: 'Biznes jarayonlarini avtomatlashtirish uchun Telegram bot. Buyurtmalarni qabul qilish va mijozlarga xizmat ko\'rsatishni osonlashtiradi.',
+    proj_4_title: 'WorkSphere PRO', proj_4_desc: 'Boshqaruv paneli, loyihalar, invoyslar, mijozlar CRM tizimi va analitikani bitta joyda jamlagan maxsus operatsion tizim (Dashboard).',
+    proj_5_title: 'My Portfolio Bot', proj_5_desc: 'Mijozlar buyurtmalar qoldirishi va men haqimda ma\'lumot olishlari uchun maxsus Telegram bot.',
+    
     contact_eyebrow: 'Aloqa', contact_title: 'Loyihangiz bormi? Yozing.', contact_desc: 'Yangi loyihalar va hamkorlik uchun doim ochiqman. Menga elektron pochta orqali yoki Telegramdan yozishingiz mumkin. Tez orada javob berishga harakat qilaman.', contact_btn_cv: 'Rezyume (CV) yuklab olish ⬇', contact_btn_bot: 'Telegram Bot orqali buyurtma berish',
     footer_text: 'Barcha huquqlar himoyalangan.'
   },
@@ -40,6 +43,9 @@ export const translations = {
     proj_1_title: 'FleetFlow Logistics SaaS', proj_1_desc: 'Modern SaaS platform for logistics and freight companies. Real-time cargo tracking and business process management system.',
     proj_2_title: 'Kalodez Web Platform', proj_2_desc: 'Landing page and business website. Features modern design and high performance with a responsive, animation-rich interface.',
     proj_3_title: 'Kalodez Bot', proj_3_desc: 'Telegram bot for automating business processes. Simplifies order taking and customer service.',
+    proj_4_title: 'WorkSphere PRO', proj_4_desc: 'A comprehensive operating system (Dashboard) integrating project management, invoicing, CRM, and analytics in one place.',
+    proj_5_title: 'My Portfolio Bot', proj_5_desc: 'A custom Telegram bot where clients can leave orders and get information about me.',
+    
     contact_eyebrow: 'Contact', contact_title: 'Have a project? Let\'s talk.', contact_desc: 'I\'m always open to new projects and collaborations. You can reach out via email or Telegram. I\'ll get back to you as soon as possible.', contact_btn_cv: 'Download Resume (CV) ⬇', contact_btn_bot: 'Order via Telegram Bot',
     footer_text: 'All rights reserved.'
   },
@@ -62,6 +68,9 @@ export const translations = {
     proj_1_title: 'FleetFlow Logistics SaaS', proj_1_desc: 'Современная SaaS-платформа для логистических компаний. Система отслеживания грузов в реальном времени и управления бизнес-процессами.',
     proj_2_title: 'Kalodez Web Platform', proj_2_desc: 'Landing page и бизнес-сайт. Современный дизайн, высокая скорость и адаптивный интерфейс с анимациями.',
     proj_3_title: 'Kalodez Bot', proj_3_desc: 'Telegram-бот для автоматизации бизнес-процессов. Упрощает прием заказов и обслуживание клиентов.',
+    proj_4_title: 'WorkSphere PRO', proj_4_desc: 'Комплексная операционная система (Dashboard), объединяющая управление проектами, выставление счетов, CRM и аналитику.',
+    proj_5_title: 'My Portfolio Bot', proj_5_desc: 'Специальный Telegram-бот, где клиенты могут оставлять заказы и получать информацию обо мне.',
+    
     contact_eyebrow: 'Контакты', contact_title: 'Есть проект? Напишите мне.', contact_desc: 'Я всегда открыт для новых проектов и сотрудничества. Вы можете написать мне на почту или в Telegram. Постараюсь ответить в ближайшее время.', contact_btn_cv: 'Скачать Резюме (CV) ⬇', contact_btn_bot: 'Заказать через Telegram Bot',
     footer_text: 'Все права защищены.'
   }

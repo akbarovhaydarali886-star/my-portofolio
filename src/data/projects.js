@@ -26,5 +26,25 @@ export const projects = [
     image: '/kalodez-zakaz-bot.jpg',
     technologies: ['JavaScript', 'REST API'],
     tools: ['Telegram API', 'Webhooks']
+  },
+  {
+    id: '4',
+    title: 'WorkSphere PRO',
+    description: 'Boshqaruv paneli va frilanserlar uchun tizim.',
+    link: 'https://freelance-operating-system.vercel.app/',
+    github: 'https://github.com/akbarovhaydarali886-star/freelance-operating-system',
+    image: '/worksphere.png',
+    technologies: ['React.js', 'JavaScript', 'Tailwind CSS'],
+    tools: ['GitHub', 'Git', 'Vercel']
+  },
+  {
+    id: '5',
+    title: 'My Portfolio Bot',
+    description: 'Telegram bot portfoliosi.',
+    link: 'https://t.me/haydaraliportfolio_bot',
+    github: 'https://github.com/akbarovhaydarali886-star/my-portofolio-bot-',
+    image: '/portfolio-bot.png',
+    technologies: ['JavaScript'],
+    tools: ['Telegram API']
   }
 ];

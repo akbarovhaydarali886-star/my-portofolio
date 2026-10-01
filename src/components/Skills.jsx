@@ -31,6 +31,7 @@ export default function Skills() {
         .skills {
           background: var(--bg-secondary);
           overflow: hidden;
+          padding-bottom: 64px;
         }
         .skills-title {
           font-size: clamp(1.6rem, 3vw, 2.2rem);
@@ -45,33 +46,18 @@ export default function Skills() {
           display: flex;
           align-items: center;
           gap: 16px;
-          background: rgba(255, 255, 255, 0.02);
+          background: var(--bg-main);
           border: 1px solid var(--border-color);
-          padding: 16px;
+          padding: 16px 20px;
           border-radius: 12px;
-          transition: all 0.3s ease;
-        }
-        .skill-card:hover {
-          transform: translateY(-4px);
-          border-color: var(--border-hover);
-          background: rgba(255, 255, 255, 0.06);
-          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
         .skill-icon {
-          width: 48px;
-          height: 48px;
+          width: 40px;
+          height: 40px;
           flex-shrink: 0;
           display: flex;
           align-items: center;
           justify-content: center;
-          border-radius: 8px;
-          background: rgba(255, 255, 255, 0.05);
-          color: #ffffff;
-          transition: all 0.3s ease;
-        }
-        .skill-card:hover .skill-icon {
-          background: #ffffff;
-          color: #000000;
         }
         .skill-info {
           display: flex;
@@ -79,15 +65,13 @@ export default function Skills() {
         }
         .skill-name {
           font-weight: 700;
-          color: #ffffff;
-          transition: color 0.3s ease;
-        }
-        .skill-card:hover .skill-name {
-          color: var(--accent);
+          color: var(--ink);
+          font-size: 1rem;
         }
         .skill-group {
-          font-size: 0.75rem;
+          font-size: 0.8rem;
           color: var(--ink-soft);
+          margin-top: 2px;
         }
         @media (max-width: 1024px) {
           .skills-grid {

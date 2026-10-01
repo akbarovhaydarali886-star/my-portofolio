@@ -1,4 +1,6 @@
-import { useLanguage } from '../context/LanguageContext'
+const fs = require('fs');
+
+const pcard = `import { useLanguage } from '../context/LanguageContext'
 
 export default function ProjectCard({ project }) {
   const { title, description, image, link, github, technologies, tools } = project
@@ -49,7 +51,7 @@ export default function ProjectCard({ project }) {
         )}
       </div>
 
-      <style>{`
+      <style>{\`
         .pcard-wrapper {
           display: flex;
           flex-direction: column;
@@ -163,7 +165,11 @@ export default function ProjectCard({ project }) {
         [data-theme="dark"] .pcard-btn.primary {
           color: #000;
         }
-      `}</style>
+      \`}</style>
     </div>
   )
 }
+`;
+
+fs.writeFileSync('src/components/ProjectCard.jsx', pcard);
+console.log('done updating ProjectCard');

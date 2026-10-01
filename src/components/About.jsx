@@ -62,7 +62,7 @@ export default function About() {
         }
         .edu-card h3 {
           font-size: 1.05rem;
-          color: #ffffff;
+          color: var(--ink);
           margin: 0 0 4px;
         }
         .edu-card p {

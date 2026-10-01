@@ -1,23 +1,26 @@
 import { useLanguage } from '../context/LanguageContext'
+
 export default function Footer() {
   const { t } = useLanguage();
   return (
     <footer className="footer">
       <div className="container footer-inner">
-        <span>© 2026 Haydarali Akbarov. All rights reserved.</span>
+        <p className="footer-copyright">
+          &copy; {new Date().getFullYear()} Akbarov Haydarali. {t('footer_text')}
+        </p>
       </div>
+
       <style>{`
         .footer {
+          padding: 32px 0;
           background: var(--bg-main);
           border-top: 1px solid var(--border-color);
-          padding: 24px 0;
+          text-align: center;
         }
-        .footer-inner {
-          display: flex;
-          justify-content: center;
-          font-size: 0.85rem;
+        .footer-copyright {
           color: var(--ink-soft);
-          letter-spacing: 0.05em;
+          font-size: 0.95rem;
+          margin: 0;
         }
       `}</style>
     </footer>

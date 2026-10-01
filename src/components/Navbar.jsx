@@ -7,7 +7,7 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const LANGS = {
     uz: { label: 'UZ', flag: '🇺🇿' },
-    en: { label: 'EN', flag: '🇬🇧' },
+    en: { label: 'EN', flag: '🇺🇸' },
     ru: { label: 'RU', flag: '🇷🇺' }
   };
 
@@ -133,7 +133,7 @@ export default function Navbar() {
           font-family: var(--font-display);
           font-size: 1.25rem;
           font-weight: 700;
-          color: #ffffff;
+          color: var(--ink);
           position: relative;
         }
         .navbar-logo::after {
@@ -143,7 +143,7 @@ export default function Navbar() {
           bottom: -4px;
           width: 0;
           height: 2px;
-          background: #ffffff;
+          background: var(--ink);
           transition: width 0.25s ease;
         }
         .navbar-logo:hover::after {
@@ -163,7 +163,7 @@ export default function Navbar() {
           bottom: -6px;
           width: 0;
           height: 2px;
-          background: #ffffff;
+          background: var(--ink);
           transition: width 0.22s ease;
         }
         .navbar-links-desktop a:hover::after {
@@ -174,7 +174,7 @@ export default function Navbar() {
           gap: 32px;
         }
         .navbar-links a:hover {
-          color: #ffffff;
+          color: var(--ink);
         }
         .navbar-toggle {
           display: none;
@@ -188,7 +188,7 @@ export default function Navbar() {
         .navbar-toggle span {
           width: 22px;
           height: 2px;
-          background: #ffffff;
+          background: var(--ink);
         }
         .navbar-links-mobile {
           display: none;
@@ -210,7 +210,7 @@ export default function Navbar() {
           .navbar-links-mobile a {
             padding: 12px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: #ffffff;
+            color: var(--ink);
             font-weight: 600;
           }
         }

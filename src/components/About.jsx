@@ -58,7 +58,7 @@ export default function About() {
           background: rgba(255, 255, 255, 0.02);
           border: 1px solid var(--border-color);
           border-radius: 12px;
-          backdrop-filter: blur(8px);
+          
         }
         .edu-card h3 {
           font-size: 1.05rem;

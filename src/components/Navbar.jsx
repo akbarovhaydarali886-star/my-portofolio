@@ -5,6 +5,12 @@ import { useState, useEffect } from 'react'
 export default function Navbar() {
   const { t, lang, setLang } = useLanguage();
   const { theme, toggleTheme } = useTheme();
+  const LANGS = {
+    uz: { label: 'UZ', flag: '🇺🇿' },
+    en: { label: 'EN', flag: '🇬🇧' },
+    ru: { label: 'RU', flag: '🇷🇺' }
+  };
+
   const LINKS = [
     { href: '#about', label: t('nav_about') },
     { href: '#skills', label: t('nav_skills') },
@@ -12,7 +18,8 @@ export default function Navbar() {
     { href: '#contact', label: t('nav_contact') },
   ];
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -38,10 +45,22 @@ export default function Navbar() {
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
               {theme === 'dark' ? '☀️' : '🌙'}
             </button>
-            <div className="lang-switcher">
-              <button className={lang === 'uz' ? 'active' : ''} onClick={() => setLang('uz')}>🇺🇿 UZ</button>
-              <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>🇬🇧 EN</button>
-              <button className={lang === 'ru' ? 'active' : ''} onClick={() => setLang('ru')}>🇷🇺 RU</button>
+            <div className="custom-lang-select" onClick={() => setLangOpen(!langOpen)}>
+              <div className="selected-lang">
+                <span>{LANGS[lang]?.flag}</span>
+                <span>{LANGS[lang]?.label}</span>
+                <span className="chevron" style={{ transform: langOpen ? 'rotate(180deg)' : 'rotate(0)' }}>▼</span>
+              </div>
+              {langOpen && (
+                <div className="dropdown-options">
+                  {Object.entries(LANGS).filter(([k]) => k !== lang).map(([k, v]) => (
+                    <div key={k} className="dropdown-option" onClick={() => { setLang(k); setLangOpen(false); }}>
+                      <span>{v.flag}</span>
+                      <span>{v.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -65,13 +84,27 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <div className="lang-switcher lang-switcher-mobile">
+          <div className="nav-controls nav-controls-mobile">
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
               {theme === 'dark' ? '☀️' : '🌙'}
             </button>
-            <button className={lang === 'uz' ? 'active' : ''} onClick={() => setLang('uz')}>🇺🇿 UZ</button>
-            <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>🇬🇧 EN</button>
-            <button className={lang === 'ru' ? 'active' : ''} onClick={() => setLang('ru')}>🇷🇺 RU</button>
+            <div className="custom-lang-select" onClick={() => setLangOpen(!langOpen)}>
+              <div className="selected-lang">
+                <span>{LANGS[lang]?.flag}</span>
+                <span>{LANGS[lang]?.label}</span>
+                <span className="chevron" style={{ transform: langOpen ? 'rotate(180deg)' : 'rotate(0)' }}>▼</span>
+              </div>
+              {langOpen && (
+                <div className="dropdown-options">
+                  {Object.entries(LANGS).filter(([k]) => k !== lang).map(([k, v]) => (
+                    <div key={k} className="dropdown-option" onClick={() => { setLang(k); setLangOpen(false); }}>
+                      <span>{v.flag}</span>
+                      <span>{v.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </nav>
       )}
@@ -81,8 +114,8 @@ export default function Navbar() {
           position: sticky;
           top: 0;
           z-index: 50;
-          background: rgba(10, 25, 47, 0.85);
-          backdrop-filter: saturate(180%) blur(10px);
+          background: var(--bg-main);
+          /* backdrop-filter removed for performance */
           border-bottom: 1px solid transparent;
           transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.25s ease;
         }
@@ -187,35 +220,62 @@ export default function Navbar() {
           transition: transform 0.2s; display: grid; place-items: center;
         }
         .theme-toggle:hover { transform: scale(1.1); }
-        .lang-switcher {
-          display: flex;
-          gap: 8px;
-          align-items: center;
-        }
-        .lang-switcher button {
-          background: transparent;
-          border: 1px solid rgba(255,255,255,0.2);
-          color: rgba(255,255,255,0.6);
-          padding: 4px 8px;
-          border-radius: 4px;
-          font-size: 0.75rem;
-          font-weight: 700;
+.custom-lang-select {
+          position: relative;
           cursor: pointer;
-          transition: all 0.2s;
+          user-select: none;
         }
-        .lang-switcher button:hover {
-          border-color: #38bdf8;
-          color: #38bdf8;
+        .selected-lang {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding: 6px 10px;
+          border-radius: 6px;
+          background: rgba(128, 128, 128, 0.1);
+          border: 1px solid var(--border-color);
+          font-weight: 600;
+          font-size: 0.85rem;
+          color: var(--ink);
+          transition: background 0.2s;
         }
-        .lang-switcher button.active {
-          background: rgba(56, 189, 248, 0.15);
-          border-color: #38bdf8;
-          color: #38bdf8;
+        .selected-lang:hover {
+          background: rgba(128, 128, 128, 0.15);
         }
-        .lang-switcher-mobile {
+        .chevron {
+          font-size: 0.6rem;
+          transition: transform 0.2s ease;
+          margin-left: 4px;
+        }
+        .dropdown-options {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          margin-top: 8px;
+          background: var(--bg-secondary);
+          border: 1px solid var(--border-color);
+          border-radius: 6px;
+          overflow: hidden;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          z-index: 100;
+          min-width: 80px;
+        }
+        .dropdown-option {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding: 8px 12px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          color: var(--ink);
+          transition: background 0.2s;
+        }
+        .dropdown-option:hover {
+          background: rgba(128, 128, 128, 0.1);
+        }
+        .nav-controls-mobile {
           margin-top: 16px;
           padding-top: 16px;
-          border-top: 1px solid rgba(255,255,255,0.1);
+          border-top: 1px solid rgba(128, 128, 128, 0.1);
           justify-content: center;
         }
         @media (max-width: 780px) {

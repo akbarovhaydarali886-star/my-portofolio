@@ -11,7 +11,7 @@ export const projects = [
   },
   {
     id: '2',
-    title: 'Quduq Master Web Platform',
+    title: 'Kalodez Web Platform',
     description: 'Landing page va biznes uchun veb-sayt. Zamonaviy dizayn va yuqori tezlikka ega. Responsive va animatsiyalarga boy interfeys yaratilgan.',
     link: 'https://kalodesweb.vercel.app/',
     image: '/kalodesweb.png',
@@ -20,7 +20,7 @@ export const projects = [
   },
   {
     id: '3',
-    title: 'Telegram Bot Xizmati',
+    title: 'Kalodez Bot',
     description: 'Biznes jarayonlarini avtomatlashtirish uchun Telegram bot. Buyurtmalarni qabul qilish va mijozlarga xizmat ko\'rsatishni osonlashtiradi.',
     link: 'https://t.me/kalodez_zakaz_bot',
     image: '/kalodez-zakaz-bot.jpg',

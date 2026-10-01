@@ -14,6 +14,7 @@ export const projects = [
     title: 'Kalodez Web Platform',
     description: 'Landing page va biznes uchun veb-sayt. Zamonaviy dizayn va yuqori tezlikka ega. Responsive va animatsiyalarga boy interfeys yaratilgan.',
     link: 'https://kalodesweb.vercel.app/',
+    github: 'https://github.com/akbarovhaydarali886-star/kalodes_web',
     image: '/kalodesweb.png',
     technologies: ['React.js', 'JavaScript', 'Tailwind CSS'],
     tools: ['Vercel']
@@ -23,6 +24,7 @@ export const projects = [
     title: 'Kalodez Bot',
     description: 'Biznes jarayonlarini avtomatlashtirish uchun Telegram bot. Buyurtmalarni qabul qilish va mijozlarga xizmat ko\'rsatishni osonlashtiradi.',
     link: 'https://t.me/kalodez_zakaz_bot',
+    github: 'https://github.com/akbarovhaydarali886-star/kalodes.telegrambot',
     image: '/kalodez-zakaz-bot.jpg',
     technologies: ['JavaScript', 'REST API'],
     tools: ['Telegram API', 'Webhooks']

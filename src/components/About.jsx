@@ -8,9 +8,9 @@ export default function About() {
       <div className="container about-inner">
         <Reveal>
           <p className="eyebrow">{t("about_eyebrow")}</p>
-          <h2 className="about-title">Ta'lim va Tajriba</h2>
+          <h2 className="about-title">{t("about_title")}</h2>
           <p className="about-text">
-            Men 2 yillik tajribaga ega Frontend dasturchiman. Shu vaqt davomida zamonaviy veb texnologiyalarini chuqur o'rganib, ko'plab real loyihalarda ishtirok etdim. Asosiy maqsadim — foydalanuvchilar uchun qulay, tezkor va chiroyli interfeyslar yaratish.
+            {t("about_p1")}
           </p>
         </Reveal>
 
@@ -19,15 +19,15 @@ export default function About() {
           <div className="edu-grid">
             <div className="edu-card">
               <h3>Najot Ta'lim</h3>
-              <p>Frontend Dasturlash (Bootcamp)</p>
+              <p>{t("about_edu_1_desc")}</p>
             </div>
             <div className="edu-card">
-              <h3>IT Live</h3>
-              <p>Web Dasturlash Asoslari</p>
+              <h3>{t("about_edu_2_title")}</h3>
+              <p>{t("about_edu_2_desc")}</p>
             </div>
             <div className="edu-card">
-              <h3>IT Shaharcha</h3>
-              <p>Dasturlash va Texnologiyalar</p>
+              <h3>{t("about_edu_3_title")}</h3>
+              <p>{t("about_edu_3_desc")}</p>
             </div>
           </div>
         </Reveal>

@@ -21,14 +21,14 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--accent)]"></span>
             </span>
-            2 yillik tajribaga ega dasturchi
+            {t("hero_status")}
           </div>
           
           <h1 className="hero-name">Akbarov Haydarali</h1>
           <p className="hero-desc">
-            Frontend Web Dasturchi
+            {t("hero_role")}
             <br/><br/>
-            Zamonaviy va qulay veb-saytlar hamda web-ilovalarni yaratish bo'yicha mutaxassis. HTML, CSS, JavaScript, React, va Next.js orqali interaktiv va sifatli UI/UX dizaynlarni kodga o'g'iraman.
+            {t("hero_tagline")}
           </p>
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">{t("hero_btn_projects")}</a>

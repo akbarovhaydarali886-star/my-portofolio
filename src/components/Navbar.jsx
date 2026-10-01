@@ -1,8 +1,10 @@
 import { useLanguage } from '../context/LanguageContext'
+import { useTheme } from '../context/ThemeContext'
 import { useState, useEffect } from 'react'
 
 export default function Navbar() {
   const { t, lang, setLang } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const LINKS = [
     { href: '#about', label: t('nav_about') },
     { href: '#skills', label: t('nav_skills') },
@@ -32,10 +34,15 @@ export default function Navbar() {
             ))}
           </nav>
           
-          <div className="lang-switcher">
-            <button className={lang === 'uz' ? 'active' : ''} onClick={() => setLang('uz')}>UZ</button>
-            <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>
-            <button className={lang === 'ru' ? 'active' : ''} onClick={() => setLang('ru')}>RU</button>
+          <div className="nav-controls">
+            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
+            <div className="lang-switcher">
+              <button className={lang === 'uz' ? 'active' : ''} onClick={() => setLang('uz')}>🇺🇿 UZ</button>
+              <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>🇬🇧 EN</button>
+              <button className={lang === 'ru' ? 'active' : ''} onClick={() => setLang('ru')}>🇷🇺 RU</button>
+            </div>
           </div>
 
         <button
@@ -59,9 +66,12 @@ export default function Navbar() {
             </a>
           ))}
           <div className="lang-switcher lang-switcher-mobile">
-            <button className={lang === 'uz' ? 'active' : ''} onClick={() => setLang('uz')}>UZ</button>
-            <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>
-            <button className={lang === 'ru' ? 'active' : ''} onClick={() => setLang('ru')}>RU</button>
+            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
+            <button className={lang === 'uz' ? 'active' : ''} onClick={() => setLang('uz')}>🇺🇿 UZ</button>
+            <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>🇬🇧 EN</button>
+            <button className={lang === 'ru' ? 'active' : ''} onClick={() => setLang('ru')}>🇷🇺 RU</button>
           </div>
         </nav>
       )}
@@ -171,6 +181,12 @@ export default function Navbar() {
             font-weight: 600;
           }
         }
+        .nav-controls { display: flex; align-items: center; gap: 16px; }
+        .theme-toggle {
+          background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--ink);
+          transition: transform 0.2s; display: grid; place-items: center;
+        }
+        .theme-toggle:hover { transform: scale(1.1); }
         .lang-switcher {
           display: flex;
           gap: 8px;

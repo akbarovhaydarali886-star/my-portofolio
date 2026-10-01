@@ -1,10 +1,13 @@
-export const translations = {
+const fs = require('fs');
+
+// 1. Rewrite locales/index.js
+const localesContent = `export const translations = {
   uz: {
-    nav_about: 'Men haqimda', nav_skills: 'Ko\'nikmalar', nav_projects: 'Loyihalar', nav_contact: 'Aloqa', nav_resume: 'Rezyume / CV',
+    nav_about: 'Men haqimda', nav_skills: 'Ko\\'nikmalar', nav_projects: 'Loyihalar', nav_contact: 'Aloqa', nav_resume: 'Rezyume / CV',
     hero_role: 'Frontend Web Dasturchi',
     hero_tagline: "Zamonaviy va qulay veb-saytlar hamda web-ilovalarni yaratish bo'yicha mutaxassis. HTML, CSS, JavaScript, React, va Next.js orqali interaktiv va sifatli UI/UX dizaynlarni kodga o'g'iraman.",
     hero_status: '2 yillik tajribaga ega dasturchi',
-    hero_btn_projects: 'Loyihalarni ko\'rish', hero_btn_cv: 'CV yuklab olish ⬇',
+    hero_btn_projects: 'Loyihalarni ko\\'rish', hero_btn_cv: 'CV yuklab olish ⬇',
     
     about_eyebrow: 'Men haqimda', about_title: "Ta'lim va Tajriba",
     about_p1: "Men 2 yillik tajribaga ega Frontend dasturchiman. Shu vaqt davomida zamonaviy veb texnologiyalarini chuqur o'rganib, ko'plab real loyihalarda ishtirok etdim. Asosiy maqsadim — foydalanuvchilar uchun qulay, tezkor va chiroyli interfeyslar yaratish.",
@@ -13,11 +16,11 @@ export const translations = {
     about_edu_2_title: "IT Live", about_edu_2_desc: "Web Dasturlash Asoslari",
     about_edu_3_title: "IT Shaharcha", about_edu_3_desc: "Dasturlash va Texnologiyalar",
     
-    skills_eyebrow: 'Ko\'nikmalar', skills_title: 'Texnologiyalar & Asboblar', skills_core: 'Core & Tillar', skills_frontend: 'Frontend Ekosistemasi', skills_backend: 'Backend & Ma\'lumotlar', skills_devops: 'DevOps & Tezlik',
+    skills_eyebrow: 'Ko\\'nikmalar', skills_title: 'Texnologiyalar & Asboblar', skills_core: 'Core & Tillar', skills_frontend: 'Frontend Ekosistemasi', skills_backend: 'Backend & Ma\\'lumotlar', skills_devops: 'DevOps & Tezlik',
     projects_eyebrow: 'Loyihalar', projects_title: 'Muhandislik yechimlari',
     proj_1_title: 'FleetFlow Logistics SaaS', proj_1_desc: 'Logistika va yuk tashish kompaniyalari uchun zamonaviy SaaS platformasi. Real vaqt rejimida yuklarni kuzatish va biznes jarayonlarini boshqarish tizimi.',
     proj_2_title: 'Kalodez Web Platform', proj_2_desc: 'Landing page va biznes uchun veb-sayt. Zamonaviy dizayn va yuqori tezlikka ega. Responsive va animatsiyalarga boy interfeys yaratilgan.',
-    proj_3_title: 'Kalodez Bot', proj_3_desc: 'Biznes jarayonlarini avtomatlashtirish uchun Telegram bot. Buyurtmalarni qabul qilish va mijozlarga xizmat ko\'rsatishni osonlashtiradi.',
+    proj_3_title: 'Kalodez Bot', proj_3_desc: 'Biznes jarayonlarini avtomatlashtirish uchun Telegram bot. Buyurtmalarni qabul qilish va mijozlarga xizmat ko\\'rsatishni osonlashtiradi.',
     contact_eyebrow: 'Aloqa', contact_title: 'Loyihangiz bormi? Yozing.', contact_desc: 'Yangi loyihalar va hamkorlik uchun doim ochiqman. Menga elektron pochta orqali yoki Telegramdan yozishingiz mumkin. Tez orada javob berishga harakat qilaman.', contact_btn_cv: 'Rezyume (CV) yuklab olish ⬇', contact_btn_bot: 'Telegram Bot orqali buyurtma berish',
     footer_text: 'Barcha huquqlar himoyalangan.'
   },
@@ -40,7 +43,7 @@ export const translations = {
     proj_1_title: 'FleetFlow Logistics SaaS', proj_1_desc: 'Modern SaaS platform for logistics and freight companies. Real-time cargo tracking and business process management system.',
     proj_2_title: 'Kalodez Web Platform', proj_2_desc: 'Landing page and business website. Features modern design and high performance with a responsive, animation-rich interface.',
     proj_3_title: 'Kalodez Bot', proj_3_desc: 'Telegram bot for automating business processes. Simplifies order taking and customer service.',
-    contact_eyebrow: 'Contact', contact_title: 'Have a project? Let\'s talk.', contact_desc: 'I\'m always open to new projects and collaborations. You can reach out via email or Telegram. I\'ll get back to you as soon as possible.', contact_btn_cv: 'Download Resume (CV) ⬇', contact_btn_bot: 'Order via Telegram Bot',
+    contact_eyebrow: 'Contact', contact_title: 'Have a project? Let\\'s talk.', contact_desc: 'I\\'m always open to new projects and collaborations. You can reach out via email or Telegram. I\\'ll get back to you as soon as possible.', contact_btn_cv: 'Download Resume (CV) ⬇', contact_btn_bot: 'Order via Telegram Bot',
     footer_text: 'All rights reserved.'
   },
   ru: {
@@ -66,3 +69,27 @@ export const translations = {
     footer_text: 'Все права защищены.'
   }
 };
+`;
+fs.writeFileSync('src/locales/index.js', localesContent);
+
+// 2. Fix Hero.jsx
+let hero = fs.readFileSync('src/components/Hero.jsx', 'utf-8');
+hero = hero.replace('2 yillik tajribaga ega dasturchi', '{t("hero_status")}');
+hero = hero.replace('Frontend Web Dasturchi', '{t("hero_role")}');
+hero = hero.replace(/Zamonaviy va qulay veb-saytlar hamda web-ilovalarni yaratish bo'yicha mutaxassis\. HTML, CSS, JavaScript, React, va Next\.js orqali interaktiv va sifatli UI\/UX dizaynlarni kodga o'g'iraman\./g, '{t("hero_tagline")}');
+fs.writeFileSync('src/components/Hero.jsx', hero);
+
+// 3. Fix About.jsx
+let about = fs.readFileSync('src/components/About.jsx', 'utf-8');
+about = about.replace("Ta'lim va Tajriba", '{t("about_title")}');
+about = about.replace(/Men 2 yillik tajribaga ega Frontend dasturchiman\. Shu vaqt davomida zamonaviy veb texnologiyalarini chuqur o'rganib, ko'plab real loyihalarda ishtirok etdim\. Asosiy maqsadim [—\-] foydalanuvchilar uchun qulay, tezkor va chiroyli interfeyslar yaratish\./g, '{t("about_p1")}');
+about = about.replace('<p className="eyebrow">Ta\\\'lim</p>', '<p className="eyebrow">{t("about_edu_title")}</p>');
+about = about.replace('<h3>Najot Ta\\\'lim</h3>', '<h3>{t("about_edu_1_title")}</h3>');
+about = about.replace('<p>Frontend Dasturlash (Bootcamp)</p>', '<p>{t("about_edu_1_desc")}</p>');
+about = about.replace('<h3>IT Live</h3>', '<h3>{t("about_edu_2_title")}</h3>');
+about = about.replace('<p>Web Dasturlash Asoslari</p>', '<p>{t("about_edu_2_desc")}</p>');
+about = about.replace('<h3>IT Shaharcha</h3>', '<h3>{t("about_edu_3_title")}</h3>');
+about = about.replace('<p>Dasturlash va Texnologiyalar</p>', '<p>{t("about_edu_3_desc")}</p>');
+fs.writeFileSync('src/components/About.jsx', about);
+
+console.log('done fixing translations');

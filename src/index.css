@@ -27,6 +27,23 @@
   --radius: 12px;
 }
 
+[data-theme="light"] {
+  --bg-main: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --border-color: #cbd5e1;
+  --border-hover: rgba(230, 194, 0, 0.6);
+  --accent: #d4af37;
+  --accent-neon: #b8860b;
+  --snow: #0f172a;
+  --snow-dim: #334155;
+  --ink: #0f172a;
+  --ink-soft: #475569;
+  --forest-deep: #f8fafc;
+  --forest: #d4af37;
+  --forest-mid: #b8860b;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -34,6 +51,7 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg-main);
+  transition: background-color 0.3s ease;
 }
 
 body {
@@ -43,6 +61,7 @@ body {
     radial-gradient(circle at 15% 50%, rgba(255, 215, 0, 0.03), transparent 25%),
     radial-gradient(circle at 85% 30%, rgba(255, 215, 0, 0.03), transparent 25%);
   color: var(--ink);
+  transition: background 0.3s ease, color 0.3s ease;
   font-family: var(--font-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;

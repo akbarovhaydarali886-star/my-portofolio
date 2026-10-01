@@ -34,21 +34,6 @@ const CONTACTS = [
     ),
   },
   {
-    label: 'Telegram Bot',
-    value: '@haydaraliportfolio_bot',
-    href: 'https://t.me/haydaraliportfolio_bot',
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="4" y="8" width="16" height="12" rx="2"></rect>
-        <path d="M12 8V4"></path>
-        <circle cx="12" cy="3" r="1"></circle>
-        <path d="M8 14h.01"></path>
-        <path d="M16 14h.01"></path>
-        <path d="M10 18h4"></path>
-      </svg>
-    ),
-  },
-  {
     label: 'GitHub',
     value: 'akbarovhaydarali886-star',
     href: 'https://github.com/akbarovhaydarali886-star',
@@ -63,27 +48,43 @@ const CONTACTS = [
 export default function Contact() {
   return (
     <section id="contact" className="contact on-dark">
-      <div className="container contact-inner">
-        <Reveal>
-          <p className="eyebrow contact-eyebrow">Aloqa</p>
-          <h2 className="contact-title">Loyihangiz bormi? Yozing.</h2>
-          <p className="contact-text">
-            Yangi loyihalar va hamkorlik uchun doim ochiqman. Menga elektron pochta orqali yoki Telegramdan yozishingiz mumkin. Tez orada javob berishga harakat qilaman.
-          </p>
-          <div style={{ marginTop: '24px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-            <a href="/Akbarov_Haydarali_CV.pdf" download="Akbarov_Haydarali_CV.pdf" className="btn btn-primary">
-              Rezyume (CV) yuklab olish ⬇
-            </a>
-            <a 
-              href="https://t.me/haydaraliportfolio_bot" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn btn-ghost tg-bot-btn"
-            >
-              🤖 Telegram Bot orqali buyurtma berish
-            </a>
-          </div>
+      <div className="container">
+        <div className="contact-inner">
+          <Reveal>
+            <p className="eyebrow contact-eyebrow">Aloqa</p>
+            <h2 className="contact-title">Loyihangiz bormi? Yozing.</h2>
+            <p className="contact-text">
+              Yangi loyihalar va hamkorlik uchun doim ochiqman. Menga elektron pochta orqali yoki Telegramdan yozishingiz mumkin. Tez orada javob berishga harakat qilaman.
+            </p>
+            <div style={{ marginTop: '24px' }}>
+              <a href="/Akbarov_Haydarali_CV.pdf" download="Akbarov_Haydarali_CV.pdf" className="btn btn-primary">
+                Rezyume (CV) yuklab olish ⬇
+              </a>
+            </div>
+          </Reveal>
 
+          <div className="contact-list">
+            {CONTACTS.map((c, i) => (
+              <Reveal
+                key={c.label}
+                delay={i * 80}
+                as="a"
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-item"
+              >
+                <span className="contact-meta">
+                  <span className="contact-icon">{c.icon}</span>
+                  <span className="contact-label">{c.label}</span>
+                </span>
+                <span className="contact-value">{c.value}</span>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+
+        <Reveal delay={200}>
           <div className="bot-card-preview">
             <div className="bot-card-badge">
               <span className="dot-pulse"></span> @haydaraliportfolio_bot
@@ -95,40 +96,20 @@ export default function Contact() {
               <span className="bot-tech-pill next-pill">▲ Next.js <small>(Oson ishlar uchun)</small></span>
               <span className="bot-tech-pill vue-pill">🟢 Vue.js <small>(Oson ishlar uchun)</small></span>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '12px', flexWrap: 'wrap', gap: '8px' }}>
+            <div className="bot-card-bottom">
               <p className="bot-card-footer">📢 Barcha arizalar zudlik bilan Telegram kanalga yuboriladi</p>
               <a 
                 href="https://t.me/haydaraliportfolio_bot" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn btn-primary"
-                style={{ fontSize: '0.85rem', padding: '6px 14px' }}
+                style={{ fontSize: '0.9rem', padding: '10px 24px' }}
               >
                 Botni ochish ↗
               </a>
             </div>
           </div>
         </Reveal>
-
-        <div className="contact-list">
-          {CONTACTS.map((c, i) => (
-            <Reveal
-              key={c.label}
-              delay={i * 80}
-              as="a"
-              href={c.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-item"
-            >
-              <span className="contact-meta">
-                <span className="contact-icon">{c.icon}</span>
-                <span className="contact-label">{c.label}</span>
-              </span>
-              <span className="contact-value">{c.value}</span>
-            </Reveal>
-          ))}
-        </div>
       </div>
 
       <style>{`
@@ -277,6 +258,14 @@ export default function Contact() {
           color: var(--accent);
           margin: 0;
           font-weight: 500;
+        }
+        .bot-card-bottom {
+          display: flex; 
+          justify-content: space-between; 
+          align-items: center; 
+          margin-top: 16px; 
+          flex-wrap: wrap; 
+          gap: 16px;
         }
         @media (max-width: 780px) {
           .contact-inner {

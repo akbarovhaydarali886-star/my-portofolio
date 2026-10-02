@@ -70,4 +70,15 @@ export const projects = [
     technologies: ['React.js', 'JavaScript', 'Tailwind CSS', 'REST API'],
     tools: ['Git', 'GitHub', 'Vercel']
   }
+,
+  {
+    id: '8',
+    title: 'Sentinel Core',
+    description: 'AI algoritmlari orqali himoyalangan va real-time boshqariladigan aktivlar markazi.',
+    link: 'https://sentinel-core.vercel.app/',
+    github: 'https://github.com/akbarovhaydarali886-star/Sentinel-Core',
+    image: '/sentinel-core.png',
+    technologies: ['React.js', 'JavaScript', 'Tailwind CSS'],
+    tools: ['Git', 'GitHub', 'Vercel']
+  }
 ];

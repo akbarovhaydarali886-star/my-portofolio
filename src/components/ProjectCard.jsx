@@ -56,7 +56,7 @@ export default function ProjectCard({ project }) {
       </div>
 
       <style>{`
-        @keyframes cardFlip { 0% { transform: perspective(1000px) rotateY(180deg); opacity: 0; } 100% { transform: perspective(1000px) rotateY(0deg); opacity: 1; } }\n        .pcard-wrapper {\n          animation: cardFlip 0.8s ease-out forwards;\n          transform-style: preserve-3d;\n          transition: transform 0.3s ease, border-color 0.2s, box-shadow 0.3s ease;
+        @keyframes cardFlip { 0% { transform: perspective(1000px) rotateY(180deg); opacity: 0; } 100% { transform: perspective(1000px) rotateY(0deg); opacity: 1; } }\n        .pcard-wrapper {\n          animation: cardFlipRound 1.5s ease-in-out forwards;\n          transform-style: preserve-3d;\n          transition: transform 0.3s ease, border-color 0.2s, box-shadow 0.3s ease;
           display: flex;
           flex-direction: column;
           background: var(--bg-main);

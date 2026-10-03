@@ -56,19 +56,30 @@ export default function ProjectCard({ project }) {
       </div>
 
       <style>{`
-        @keyframes cardFlip { 0% { transform: perspective(1000px) rotateY(180deg); opacity: 0; } 100% { transform: perspective(1000px) rotateY(0deg); opacity: 1; } }\n        .pcard-wrapper {\n          animation: cardFlipRound 1.5s ease-in-out forwards;\n          transform-style: preserve-3d;\n          transition: transform 0.3s ease, border-color 0.2s, box-shadow 0.3s ease;
-          display: flex;
-          flex-direction: column;
-          background: var(--bg-main);
-          border: 1px solid var(--border-color);
-          border-radius: 12px;
-          overflow: hidden;
-          transition: border-color 0.2s;
-          height: 100%;
-        }
+        @keyframes cardSpinAndReturn {
+  0% { transform: perspective(1000px) rotateY(0deg); }
+  50% { transform: perspective(1000px) rotateY(360deg); }
+  100% { transform: perspective(1000px) rotateY(0deg); }
+}
+.pcard-wrapper {
+  animation: cardSpinAndReturn 2s ease-in-out forwards;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.2s, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+}
         .pcard-wrapper:hover {
-          border-color: var(--accent);
-        }
+  border-color: var(--accent);
+  transform: perspective(1000px) translateZ(40px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  z-index: 10;
+  position: relative;
+}
         .pcard-image {
           width: 100%;
           height: 160px;

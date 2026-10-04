@@ -101,5 +101,15 @@ export const projects = [
     image: '/aerotense.png',
     technologies: ['React', 'TypeScript', 'Three.js', 'Tailwind CSS', 'WebGL'],
     tools: ['Git', 'GitHub', 'Vercel']
+  },
+  {
+    id: '11',
+    title: '3D CarShop',
+    description: 'Loyiha foydalanuvchiga hech qanday qo\'shimcha plagin yoki dasturlar o\'rnatmasdan, istalgan qurilmada (kompyuter, planshet, smartfon) 8 ta afsonaviy avtomobilni 360 gradusda ko\'rish, rangini o\'zgartirish, faralarini yoqish, motor tovushini sinash va muhandislik darajasida detallarga sochib ko\'rish (Exploded View) imkonini beradi.',
+    link: 'https://3d-carshop.vercel.app/',
+    github: 'https://github.com/akbarovhaydarali886-star/3d-carshop',
+    image: '/3d-carshop.png',
+    technologies: ['React.js', 'Three.js', 'CSS', 'JavaScript'],
+    tools: ['Git', 'GitHub', 'Vercel']
   }
 ];

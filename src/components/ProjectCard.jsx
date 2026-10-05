@@ -14,30 +14,17 @@ export default function ProjectCard({ project }) {
       </div>
       
       <div className="pcard-body">
-        <h3 className="pcard-title">{title}</h3>
+        <h3 className="pcard-title" title={title}>{title}</h3>
         <p className="pcard-desc">{description}</p>
         
-        {technologies && technologies.length > 0 && (
-          <div className="pcard-stack-group">
-            <h4>Texnologiyalar:</h4>
-            <div className="pcard-tags">
-              {technologies.map((t, idx) => (
-                <span key={idx} className="pcard-tag tech-tag">{t}</span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {tools && tools.length > 0 && (
-          <div className="pcard-stack-group">
-            <h4>Vositalar (Tools):</h4>
-            <div className="pcard-tags">
-              {tools.map((t, idx) => (
-                <span key={idx} className="pcard-tag tool-tag">{t}</span>
-              ))}
-            </div>
-          </div>
-        )}
+        <div className="pcard-tags-area">
+          {technologies && technologies.map((t, idx) => (
+            <span key={'tech-' + idx} className="pcard-tag tech-tag">{t}</span>
+          ))}
+          {tools && tools.map((t, idx) => (
+            <span key={'tool-' + idx} className="pcard-tag tool-tag">{t}</span>
+          ))}
+        </div>
       </div>
 
       <div className="pcard-actions">
@@ -63,21 +50,24 @@ export default function ProjectCard({ project }) {
           flex-direction: column;
           background: var(--bg-main);
           border: 1px solid var(--border-color);
-          border-radius: 14px;
+          border-radius: 12px;
           overflow: hidden;
           height: 100%;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
         }
         .pcard-wrapper:hover {
           border-color: var(--accent);
-          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(255, 215, 0, 0.2);
+          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 20px rgba(255, 215, 0, 0.2);
         }
         .pcard-image {
           width: 100%;
-          height: 160px;
-          background: #000;
+          height: 48%;
+          min-height: 150px;
+          max-height: 180px;
+          background: #050b14;
           overflow: hidden;
           position: relative;
+          flex-shrink: 0;
         }
         .pcard-image img {
           width: 100%;
@@ -89,15 +79,17 @@ export default function ProjectCard({ project }) {
           transform: scale(1.05);
         }
         .pcard-body {
-          padding: 16px;
+          padding: 8px 10px 4px;
           flex-grow: 1;
           display: flex;
           flex-direction: column;
+          min-height: 0;
+          overflow: hidden;
         }
         .pcard-title {
-          font-size: 1.1rem;
+          font-size: 0.92rem;
           color: var(--ink);
-          margin: 0 0 8px;
+          margin: 0 0 3px;
           font-weight: 700;
           white-space: nowrap;
           overflow: hidden;
@@ -105,72 +97,66 @@ export default function ProjectCard({ project }) {
         }
         .pcard-desc {
           color: var(--ink-soft);
-          font-size: 0.84rem;
-          line-height: 1.48;
-          margin: 0 0 14px;
+          font-size: 0.74rem;
+          line-height: 1.32;
+          margin: 0 0 6px;
           display: -webkit-box;
-          -webkit-line-clamp: 3;
+          -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-overflow: ellipsis;
-          flex-grow: 1;
         }
-        .pcard-stack-group {
-          margin-bottom: 10px;
-        }
-        .pcard-stack-group h4 {
-          font-size: 0.68rem;
-          color: var(--ink);
-          margin: 0 0 5px;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          font-weight: 700;
-        }
-        .pcard-tags {
+        .pcard-tags-area {
           display: flex;
           flex-wrap: wrap;
-          gap: 4px;
+          gap: 3px;
+          margin-top: auto;
+          margin-bottom: 4px;
+          max-height: 38px;
+          overflow: hidden;
         }
         .pcard-tag {
-          font-size: 0.68rem;
+          font-size: 0.62rem;
           font-weight: 600;
-          padding: 2px 7px;
-          border-radius: 6px;
+          padding: 1px 5px;
+          border-radius: 4px;
+          line-height: 1.2;
         }
         .tech-tag {
-          background: rgba(255, 215, 0, 0.1);
+          background: rgba(255, 215, 0, 0.12);
           color: var(--accent);
           border: 1px solid rgba(255, 215, 0, 0.25);
         }
         .tool-tag {
-          background: rgba(128, 128, 128, 0.1);
+          background: rgba(128, 128, 128, 0.12);
           color: var(--ink);
           border: 1px solid rgba(128, 128, 128, 0.2);
         }
         .pcard-actions {
-          padding: 12px 16px;
+          padding: 6px 10px;
           background: var(--bg-secondary);
           border-top: 1px solid var(--border-color);
           display: flex;
-          gap: 10px;
+          gap: 6px;
+          flex-shrink: 0;
         }
         .pcard-btn {
           flex: 1;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 6px;
+          gap: 4px;
           text-align: center;
-          padding: 8px 10px;
-          font-size: 0.8rem;
+          padding: 5px 6px;
+          font-size: 0.72rem;
           font-weight: 600;
-          border-radius: 6px;
+          border-radius: 5px;
           transition: all 0.2s ease;
           text-decoration: none;
         }
         .pcard-btn svg {
-          width: 15px;
-          height: 15px;
+          width: 12px;
+          height: 12px;
         }
         .pcard-btn.primary {
           background: var(--accent);
@@ -180,12 +166,12 @@ export default function ProjectCard({ project }) {
           filter: brightness(1.1);
         }
         .pcard-btn.ghost {
-          background: rgba(128, 128, 128, 0.1);
+          background: rgba(128, 128, 128, 0.12);
           color: var(--ink);
           border: 1px solid transparent;
         }
         .pcard-btn.ghost:hover {
-          background: rgba(128, 128, 128, 0.2);
+          background: rgba(128, 128, 128, 0.22);
         }
         [data-theme="light"] .pcard-btn.primary {
           color: #fff;

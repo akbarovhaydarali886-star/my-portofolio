@@ -175,18 +175,17 @@ export default function Projects() {
       <style>{`
         .projects {
           background: var(--bg-main);
-          padding-top: 90px;
-          padding-bottom: 110px;
+          padding-top: 80px;
+          padding-bottom: 90px;
           position: relative;
-          overflow: hidden;
         }
         .projects-header-row {
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
           flex-wrap: wrap;
-          gap: 20px;
-          margin-bottom: 28px;
+          gap: 16px;
+          margin-bottom: 20px;
         }
         .projects-title {
           font-size: clamp(1.6rem, 3vw, 2.2rem);
@@ -196,24 +195,24 @@ export default function Projects() {
         .projects-controls-bar {
           display: flex;
           align-items: center;
-          gap: 14px;
+          gap: 12px;
           flex-wrap: wrap;
         }
         .view-toggle-group {
           display: inline-flex;
           background: rgba(128, 128, 128, 0.12);
-          padding: 4px;
-          border-radius: 10px;
+          padding: 3px;
+          border-radius: 9px;
           border: 1px solid var(--border-color);
         }
         .view-btn {
           background: transparent;
           border: none;
           color: var(--ink-soft);
-          font-size: 0.84rem;
+          font-size: 0.82rem;
           font-weight: 600;
-          padding: 6px 14px;
-          border-radius: 7px;
+          padding: 5px 12px;
+          border-radius: 6px;
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -223,7 +222,7 @@ export default function Projects() {
         .view-btn.active {
           background: var(--accent);
           color: #000;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
         [data-theme="dark"] .view-btn.active {
           color: #000;
@@ -234,16 +233,16 @@ export default function Projects() {
         .carousel-nav-buttons {
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 6px;
         }
         .carousel-nav-btn {
-          width: 38px;
-          height: 38px;
+          width: 34px;
+          height: 34px;
           border-radius: 50%;
           background: rgba(128, 128, 128, 0.12);
           border: 1px solid var(--border-color);
           color: var(--ink);
-          font-size: 1rem;
+          font-size: 0.9rem;
           font-weight: bold;
           display: grid;
           place-items: center;
@@ -259,32 +258,32 @@ export default function Projects() {
         .carousel-hint {
           text-align: center;
           color: var(--ink-soft);
-          font-size: 0.85rem;
-          margin: 0 auto 30px;
-          max-width: 600px;
+          font-size: 0.82rem;
+          margin: 0 auto 20px;
+          max-width: 620px;
         }
         .carousel-hint span {
           color: var(--accent);
           font-weight: 600;
         }
 
-        /* 3D Carousel Stage */
+        /* 3D Carousel Stage with compact dimensions */
         :root {
-          --card-w: 320px;
-          --card-h: 510px;
-          --radius: 640px;
+          --card-w: 250px;
+          --card-h: 360px;
+          --radius: 490px;
         }
         .carousel-viewport-wrapper {
           position: relative;
           width: 100%;
-          padding: 20px 0 40px;
+          padding: 10px 0 50px;
         }
         .carousel-stage {
           position: relative;
           width: 100%;
-          height: 600px;
-          perspective: 1600px;
-          perspective-origin: 50% 46%;
+          height: 460px;
+          perspective: 1400px;
+          perspective-origin: 50% 50%;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -303,10 +302,10 @@ export default function Projects() {
         }
         @keyframes spinCharxpalak {
           0% {
-            transform: translateZ(-200px) rotateX(-5deg) rotateY(0deg);
+            transform: translateZ(-140px) rotateX(-2deg) rotateY(0deg);
           }
           100% {
-            transform: translateZ(-200px) rotateX(-5deg) rotateY(360deg);
+            transform: translateZ(-140px) rotateX(-2deg) rotateY(360deg);
           }
         }
         .carousel-track {
@@ -314,7 +313,7 @@ export default function Projects() {
           height: 100%;
           position: absolute;
           transform-style: preserve-3d;
-          animation: spinCharxpalak 50s linear infinite;
+          animation: spinCharxpalak 45s linear infinite;
         }
         .carousel-track.is-paused,
         .carousel-track:hover {
@@ -333,20 +332,20 @@ export default function Projects() {
           transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.35s ease, opacity 0.35s ease;
         }
         .carousel-slot:hover {
-          transform: rotateY(calc(var(--angle) * 1deg)) translateZ(calc(var(--radius) + 120px)) scale(1.08);
+          transform: rotateY(calc(var(--angle) * 1deg)) translateZ(calc(var(--radius) + 90px)) scale(1.08);
           z-index: 100;
-          filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.85));
+          filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.8));
         }
         .carousel-track:hover .carousel-slot:not(:hover) {
           opacity: 0.65;
-          filter: brightness(0.8);
+          filter: brightness(0.82);
         }
 
         /* Grid Mode */
         .projects-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-          gap: 32px;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 24px;
         }
         .projects-empty {
           border: 1px dashed var(--border-color);
@@ -359,24 +358,24 @@ export default function Projects() {
         /* Responsive */
         @media (max-width: 1024px) {
           :root {
-            --card-w: 280px;
-            --card-h: 480px;
-            --radius: 560px;
+            --card-w: 230px;
+            --card-h: 350px;
+            --radius: 450px;
           }
           .carousel-stage {
-            height: 560px;
-            perspective: 1400px;
+            height: 440px;
+            perspective: 1250px;
           }
         }
         @media (max-width: 768px) {
           :root {
-            --card-w: 250px;
-            --card-h: 460px;
-            --radius: 480px;
+            --card-w: 205px;
+            --card-h: 335px;
+            --radius: 395px;
           }
           .carousel-stage {
-            height: 530px;
-            perspective: 1200px;
+            height: 420px;
+            perspective: 1100px;
           }
           .projects-header-row {
             flex-direction: column;
@@ -385,13 +384,13 @@ export default function Projects() {
         }
         @media (max-width: 480px) {
           :root {
-            --card-w: 220px;
-            --card-h: 430px;
-            --radius: 400px;
+            --card-w: 180px;
+            --card-h: 310px;
+            --radius: 340px;
           }
           .carousel-stage {
-            height: 490px;
-            perspective: 1000px;
+            height: 390px;
+            perspective: 950px;
           }
         }
       `}</style>

@@ -56,68 +56,72 @@ export default function ProjectCard({ project }) {
       </div>
 
       <style>{`
-        @keyframes cardSpinAndReturn {
-  0% { transform: perspective(1000px) rotateY(0deg); }
-  50% { transform: perspective(1000px) rotateY(360deg); }
-  100% { transform: perspective(1000px) rotateY(0deg); }
-}
-.pcard-wrapper {
-  animation: cardSpinAndReturn 2s ease-in-out forwards;
-  transform-style: preserve-3d;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.2s, box-shadow 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-main);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  overflow: hidden;
-  height: 100%;
-}
+        .pcard-wrapper {
+          transform-style: preserve-3d;
+          transition: border-color 0.25s ease, box-shadow 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          background: var(--bg-main);
+          border: 1px solid var(--border-color);
+          border-radius: 14px;
+          overflow: hidden;
+          height: 100%;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
         .pcard-wrapper:hover {
-  border-color: var(--accent);
-  transform: perspective(1000px) translateZ(40px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  z-index: 10;
-  position: relative;
-}
+          border-color: var(--accent);
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(255, 215, 0, 0.2);
+        }
         .pcard-image {
           width: 100%;
           height: 160px;
           background: #000;
           overflow: hidden;
+          position: relative;
         }
         .pcard-image img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.3s ease;
+          transition: transform 0.4s ease;
         }
         .pcard-wrapper:hover .pcard-image img {
-          transform: scale(1.03);
+          transform: scale(1.05);
         }
         .pcard-body {
           padding: 16px;
           flex-grow: 1;
+          display: flex;
+          flex-direction: column;
         }
         .pcard-title {
           font-size: 1.1rem;
           color: var(--ink);
           margin: 0 0 8px;
           font-weight: 700;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         .pcard-desc {
           color: var(--ink-soft);
-          font-size: 0.85rem;
-          line-height: 1.5;
-          margin: 0 0 16px;
+          font-size: 0.84rem;
+          line-height: 1.48;
+          margin: 0 0 14px;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          flex-grow: 1;
         }
         .pcard-stack-group {
-          margin-bottom: 12px;
+          margin-bottom: 10px;
         }
         .pcard-stack-group h4 {
-          font-size: 0.7rem;
+          font-size: 0.68rem;
           color: var(--ink);
-          margin: 0 0 6px;
+          margin: 0 0 5px;
           text-transform: uppercase;
           letter-spacing: 0.5px;
           font-weight: 700;
@@ -128,15 +132,15 @@ export default function ProjectCard({ project }) {
           gap: 4px;
         }
         .pcard-tag {
-          font-size: 0.7rem;
+          font-size: 0.68rem;
           font-weight: 600;
-          padding: 3px 8px;
+          padding: 2px 7px;
           border-radius: 6px;
         }
         .tech-tag {
           background: rgba(255, 215, 0, 0.1);
           color: var(--accent);
-          border: 1px solid rgba(255, 215, 0, 0.2);
+          border: 1px solid rgba(255, 215, 0, 0.25);
         }
         .tool-tag {
           background: rgba(128, 128, 128, 0.1);
@@ -148,7 +152,7 @@ export default function ProjectCard({ project }) {
           background: var(--bg-secondary);
           border-top: 1px solid var(--border-color);
           display: flex;
-          gap: 12px;
+          gap: 10px;
         }
         .pcard-btn {
           flex: 1;
@@ -157,7 +161,7 @@ export default function ProjectCard({ project }) {
           justify-content: center;
           gap: 6px;
           text-align: center;
-          padding: 8px 12px;
+          padding: 8px 10px;
           font-size: 0.8rem;
           font-weight: 600;
           border-radius: 6px;
@@ -165,8 +169,8 @@ export default function ProjectCard({ project }) {
           text-decoration: none;
         }
         .pcard-btn svg {
-          width: 16px;
-          height: 16px;
+          width: 15px;
+          height: 15px;
         }
         .pcard-btn.primary {
           background: var(--accent);

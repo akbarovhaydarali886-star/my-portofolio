@@ -20,16 +20,6 @@ export const projects = [
     tools: ['Vercel']
   },
   {
-    id: '3',
-    title: 'Kalodez Bot',
-    description: 'Biznes jarayonlarini avtomatlashtirish uchun Telegram bot. Buyurtmalarni qabul qilish va mijozlarga xizmat ko\'rsatishni osonlashtiradi.',
-    link: 'https://t.me/kalodez_zakaz_bot',
-    github: 'https://github.com/akbarovhaydarali886-star/kalodes.telegrambot',
-    image: '/kalodez-zakaz-bot.jpg',
-    technologies: ['Go', 'REST API'],
-    tools: ['Telegram API', 'Webhooks']
-  },
-  {
     id: '4',
     title: 'WorkSphere PRO',
     description: 'Boshqaruv paneli va frilanserlar uchun tizim.',
@@ -39,17 +29,6 @@ export const projects = [
     technologies: ['React.js', 'JavaScript', 'Tailwind CSS'],
     tools: ['GitHub', 'Git', 'Vercel']
   },
-  {
-    id: '5',
-    title: 'My Portfolio Bot',
-    description: 'Telegram bot portfoliosi.',
-    link: 'https://t.me/haydaraliportfolio_bot',
-    github: 'https://github.com/akbarovhaydarali886-star/my-portofolio-bot-',
-    image: '/portfolio-bot.png',
-    technologies: ['Go'],
-    tools: ['Telegram API']
-  }
-,
   {
     id: '6',
     title: 'Qora ko\'l study',
@@ -69,8 +48,7 @@ export const projects = [
     image: '/nexusapi.png',
     technologies: ['React.js', 'JavaScript', 'Tailwind CSS', 'REST API'],
     tools: ['Git', 'GitHub', 'Vercel']
-  }
-,
+  },
   {
     id: '8',
     title: 'Sentinel Core',
@@ -80,8 +58,7 @@ export const projects = [
     image: '/sentinel-core.png',
     technologies: ['React.js', 'JavaScript', 'Tailwind CSS'],
     tools: ['Git', 'GitHub', 'Vercel']
-  }
-,
+  },
   {
     id: '9',
     title: 'PALMO 3D animation project',
@@ -111,5 +88,35 @@ export const projects = [
     image: '/3d-carshop.png',
     technologies: ['React.js', 'Three.js', 'CSS', 'JavaScript'],
     tools: ['Git', 'GitHub', 'Vercel']
+  },
+  {
+    id: '12',
+    title: 'Cash Money CRM',
+    description: 'Ushbu platforma insonning barcha kundalik to\'lovlari — kommunal xizmatlar, davlat soliqlari, avtomobil xarajatlari va oilaviy ta\'lim to\'lovlarini bitta joyda tartibli boshqarish uchun xizmat qiladi. Tizim avtomobil va xonadon ma\'lumotlarini guvohnoma hamda kadastr orqali avtomatik aniqlab, to\'lov muddatlari, sug\'urtalar va radar jarimalarini o\'z vaqtida nazorat qilishga yordam beradi. Bu esa foydalanuvchiga oylik maoshini to\'g\'ri taqsimlab, ortiqcha jarima va qarzdorliklarsiz shaxsiy byudjetini to\'liq nazoratda ushlab turish imkonini beradi.',
+    link: 'https://cash-money-crm.vercel.app/',
+    github: 'https://github.com/akbarovhaydarali886-star/cash-money-crm-',
+    image: '/cash-money.png',
+    technologies: ['React.js', 'Tailwind CSS', 'TypeScript'],
+    tools: ['Git', 'GitHub', 'Vercel']
+  },
+  {
+    id: '3',
+    title: 'Kalodez Bot',
+    description: 'Biznes jarayonlarini avtomatlashtirish uchun Telegram bot. Buyurtmalarni qabul qilish va mijozlarga xizmat ko\'rsatishni osonlashtiradi.',
+    link: 'https://t.me/kalodez_zakaz_bot',
+    github: 'https://github.com/akbarovhaydarali886-star/kalodes.telegrambot',
+    image: '/kalodez-zakaz-bot.jpg',
+    technologies: ['Go', 'REST API'],
+    tools: ['Git', 'GitHub', 'Render']
+  },
+  {
+    id: '5',
+    title: 'My Portfolio Bot',
+    description: 'Telegram bot portfoliosi.',
+    link: 'https://t.me/haydaraliportfolio_bot',
+    github: 'https://github.com/akbarovhaydarali886-star/my-portofolio-bot-',
+    image: '/portfolio-bot.png',
+    technologies: ['Go', 'REST API'],
+    tools: ['Git', 'GitHub', 'Render']
   }
 ];

@@ -195,11 +195,8 @@ export default function Projects() {
           display: flex;
           justify-content: center;
           align-items: center;
-          border-radius: 20px;
-          border: 1px solid var(--border-color);
-          background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.04) 0%, rgba(10, 25, 47, 0.3) 60%, transparent 100%);
-          overflow: hidden;
-          box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35);
+          background: transparent;
+          border: none;
         }
         @keyframes spinCharxpalak {
           0% {

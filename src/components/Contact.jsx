@@ -59,7 +59,7 @@ export default function Contact() {
               Yangi loyihalar va hamkorlik uchun doim ochiqman. Menga elektron pochta orqali yoki Telegramdan yozishingiz mumkin. Tez orada javob berishga harakat qilaman.
             </p>
             <div style={{ marginTop: '24px' }}>
-              <a href="/Akbarov_Haydarali_CV.pdf" download="Akbarov_Haydarali_CV.pdf" className="btn btn-primary">
+              <a href="/Akbarov_Haydarali_CV.pdf" download="Akbarov_Haydarali_CV.pdf" className="btn btn-primary contact-cv-btn">
                 Rezyume (CV) yuklab olish ⬇
               </a>
             </div>
@@ -187,6 +187,33 @@ export default function Contact() {
         @media (max-width: 780px) {
           .contact-inner {
             grid-template-columns: 1fr;
+            gap: 36px;
+          }
+        }
+        @media (max-width: 600px) {
+          a.contact-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            padding: 14px 4px;
+          }
+          .contact-value {
+            text-align: left;
+            font-size: 0.9rem;
+            word-break: break-all;
+          }
+        }
+        @media (max-width: 480px) {
+          .contact-title {
+            font-size: 1.7rem;
+            max-width: 100%;
+          }
+          .contact-cv-btn {
+            width: 100%;
+          }
+          .contact-bot-outline-btn {
+            padding: 12px;
+            font-size: 0.92rem;
           }
         }
       `}</style>

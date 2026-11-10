@@ -168,6 +168,64 @@ export default function ProjectCard({ project }) {
         [data-theme="dark"] .pcard-btn.primary {
           color: #000;
         }
+        @media (max-width: 768px) {
+          .pcard-image {
+            height: 125px;
+          }
+          .pcard-title {
+            font-size: 0.88rem;
+          }
+          .pcard-desc {
+            font-size: 0.72rem;
+          }
+          .pcard-actions {
+            padding: 6px 8px;
+            gap: 6px;
+          }
+          .pcard-btn {
+            padding: 5px 6px;
+            font-size: 0.7rem;
+          }
+        }
+        @media (max-width: 480px) {
+          .pcard-image {
+            height: 110px;
+          }
+          .pcard-body {
+            padding: 8px 10px 4px;
+          }
+          .pcard-title {
+            font-size: 0.82rem;
+            margin-bottom: 2px;
+          }
+          .pcard-desc {
+            font-size: 0.68rem;
+            line-height: 1.3;
+            margin-bottom: 4px;
+            -webkit-line-clamp: 2;
+          }
+          .pcard-tags-area {
+            gap: 2px;
+            max-height: 38px;
+          }
+          .pcard-tag {
+            font-size: 0.6rem;
+            padding: 1px 4px;
+          }
+          .pcard-actions {
+            padding: 6px 8px;
+            gap: 5px;
+          }
+          .pcard-btn {
+            font-size: 0.65rem;
+            padding: 5px 4px;
+            gap: 3px;
+          }
+          .pcard-btn svg {
+            width: 11px;
+            height: 11px;
+          }
+        }
       `}</style>
     </div>
   )

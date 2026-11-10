@@ -184,6 +184,8 @@ export default function Projects() {
         .carousel-viewport-wrapper {
           position: relative;
           width: 100%;
+          max-width: 100%;
+          overflow: hidden;
           padding: 10px 0 20px;
         }
         .carousel-stage {
@@ -258,9 +260,9 @@ export default function Projects() {
         @media (max-width: 768px) {
           :root {
             --card-w: 190px;
-            --card-h: 300px;
-            --radius: 360px;
-            --track-z: -190px;
+            --card-h: 305px;
+            --radius: 350px;
+            --track-z: -180px;
           }
           .carousel-stage {
             height: 460px;
@@ -269,18 +271,47 @@ export default function Projects() {
           .projects-header-row {
             flex-direction: column;
             align-items: flex-start;
+            gap: 12px;
           }
         }
         @media (max-width: 480px) {
           :root {
             --card-w: 165px;
-            --card-h: 280px;
-            --radius: 310px;
-            --track-z: -160px;
+            --card-h: 290px;
+            --radius: 275px;
+            --track-z: -130px;
           }
           .carousel-stage {
-            height: 430px;
-            perspective: 950px;
+            height: 420px;
+            perspective: 850px;
+          }
+          .projects-controls-bar {
+            width: 100%;
+            justify-content: space-between;
+          }
+          .view-btn {
+            font-size: 0.78rem;
+            padding: 5px 10px;
+          }
+          .projects-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+        }
+        @media (max-width: 360px) {
+          :root {
+            --card-w: 145px;
+            --card-h: 275px;
+            --radius: 230px;
+            --track-z: -100px;
+          }
+          .carousel-stage {
+            height: 380px;
+            perspective: 750px;
+          }
+          .view-btn {
+            font-size: 0.72rem;
+            padding: 4px 8px;
           }
         }
       `}</style>

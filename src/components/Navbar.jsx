@@ -34,7 +34,7 @@ export default function Navbar() {
           Haydarali
         </a>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+        <div className="navbar-right">
           <nav className="navbar-links navbar-links-desktop">
             {LINKS.map((l) => (
               <a key={l.href} href={l.href}>{l.label}</a>
@@ -214,7 +214,42 @@ export default function Navbar() {
             font-weight: 600;
           }
         }
+        .navbar-right {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+        }
         .nav-controls { display: flex; align-items: center; gap: 16px; }
+        @media (max-width: 780px) {
+          .navbar-right {
+            gap: 12px;
+          }
+        }
+        @media (max-width: 480px) {
+          .navbar-inner {
+            height: 62px;
+          }
+          .navbar-right {
+            gap: 8px;
+          }
+          .navbar-logo {
+            font-size: 1.15rem;
+          }
+          .nav-controls {
+            gap: 8px;
+          }
+          .theme-toggle {
+            font-size: 1.1rem;
+          }
+          .selected-lang {
+            padding: 4px 7px;
+            font-size: 0.78rem;
+            gap: 4px;
+          }
+          .navbar-toggle {
+            padding: 6px;
+          }
+        }
         .theme-toggle {
           background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--ink);
           transition: transform 0.2s; display: grid; place-items: center;

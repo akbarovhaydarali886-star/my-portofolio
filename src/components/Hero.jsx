@@ -168,9 +168,26 @@ export default function Hero() {
         @media (max-width: 860px) {
           .hero-inner {
             grid-template-columns: 1fr;
+            gap: 32px;
           }
           .hero-grid {
             display: none;
+          }
+        }
+        @media (max-width: 480px) {
+          .hero {
+            padding: 44px 0 56px;
+          }
+          .hero-name {
+            font-size: 2.15rem;
+          }
+          .hero-actions {
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+          }
+          .hero-actions .btn {
+            width: 100%;
           }
         }
       `}</style>

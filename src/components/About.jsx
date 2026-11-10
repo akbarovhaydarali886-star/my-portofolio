@@ -18,10 +18,6 @@ export default function About() {
           <p className="eyebrow">Ta'lim</p>
           <div className="edu-grid">
             <div className="edu-card">
-              <h3>Najot Ta'lim</h3>
-              <p>{t("about_edu_1_desc")}</p>
-            </div>
-            <div className="edu-card">
               <h3>{t("about_edu_2_title")}</h3>
               <p>{t("about_edu_2_desc")}</p>
             </div>
@@ -49,7 +45,7 @@ export default function About() {
         }
         .edu-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 16px;
           margin-top: 16px;
         }
@@ -58,7 +54,6 @@ export default function About() {
           background: rgba(255, 255, 255, 0.02);
           border: 1px solid var(--border-color);
           border-radius: 12px;
-          
         }
         .edu-card h3 {
           font-size: 1.05rem;

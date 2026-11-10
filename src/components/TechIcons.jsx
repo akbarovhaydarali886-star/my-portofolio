@@ -147,6 +147,65 @@ export function BootstrapIcon() {
   )
 }
 
+export function NodeIcon() {
+  return (
+    <Svg className="icon-node">
+      <path d="M24 8 L38 16 V32 L24 40 L10 32 V16 Z" fill="#339933" />
+      <text x="24" y="28" fill="#FFF" fontSize="12" fontWeight="bold" fontFamily="sans-serif" textAnchor="middle">N</text>
+    </Svg>
+  )
+}
+
+export function ExpressIcon() {
+  return (
+    <Svg className="icon-express">
+      <rect x="6" y="14" width="36" height="20" rx="4" fill="#000" stroke="#888" strokeWidth="1" />
+      <text x="24" y="28" fill="#FFF" fontSize="11" fontWeight="bold" fontFamily="sans-serif" textAnchor="middle">Ex</text>
+    </Svg>
+  )
+}
+
+export function NestIcon() {
+  return (
+    <Svg className="icon-nest">
+      <circle cx="24" cy="24" r="16" fill="#E0234E" />
+      <text x="24" y="29" fill="#FFF" fontSize="14" fontWeight="bold" fontFamily="sans-serif" textAnchor="middle">N</text>
+    </Svg>
+  )
+}
+
+export function SqlIcon() {
+  return (
+    <Svg className="icon-sql">
+      <ellipse cx="24" cy="16" rx="14" ry="6" fill="#00618A" />
+      <path d="M10 16 V32 C10 35.3 16.3 38 24 38 C31.7 38 38 35.3 38 32 V16" fill="#00618A" />
+      <ellipse cx="24" cy="16" rx="14" ry="6" fill="#4479A1" />
+      <text x="24" y="31" fill="#FFF" fontSize="10" fontWeight="bold" fontFamily="sans-serif" textAnchor="middle">SQL</text>
+    </Svg>
+  )
+}
+
+export function PostgresIcon() {
+  return (
+    <Svg className="icon-postgres">
+      <ellipse cx="24" cy="16" rx="14" ry="6" fill="#336791" />
+      <path d="M10 16 V32 C10 35.3 16.3 38 24 38 C31.7 38 38 35.3 38 32 V16" fill="#336791" />
+      <ellipse cx="24" cy="16" rx="14" ry="6" fill="#4A8BBE" />
+      <text x="24" y="31" fill="#FFF" fontSize="8" fontWeight="bold" fontFamily="sans-serif" textAnchor="middle">PG</text>
+    </Svg>
+  )
+}
+
+export function MongoIcon() {
+  return (
+    <Svg className="icon-mongo">
+      <path d="M24 6 C24 6 18 14 18 24 C18 34 24 42 24 42 C24 42 30 34 30 24 C30 14 24 6 24 6 Z" fill="#47A248" />
+      <path d="M23.5 18 V36" stroke="#FFF" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="24" cy="14" r="2" fill="#B8E986" />
+    </Svg>
+  )
+}
+
 const ICONS = {
   html: HtmlIcon,
   css: CssIcon,
@@ -158,6 +217,12 @@ const ICONS = {
   bootstrap: BootstrapIcon,
   ux: UxIcon,
   api: ApiIcon,
+  node: NodeIcon,
+  express: ExpressIcon,
+  nest: NestIcon,
+  sql: SqlIcon,
+  postgres: PostgresIcon,
+  mongo: MongoIcon,
 }
 
 export default function TechIcon({ id }) {
@@ -172,8 +237,14 @@ export const TECH_STACK = [
   { id: 'react', name: 'React.js', group: 'Framework' },
   { id: 'vue', name: 'Vue.js', group: 'Framework' },
   { id: 'next', name: 'Next.js', group: 'Framework' },
+  { id: 'node', name: 'Node.js', group: 'Backend' },
+  { id: 'express', name: 'Express.js', group: 'Backend' },
+  { id: 'nest', name: 'Nest.js', group: 'Backend' },
+  { id: 'sql', name: 'SQL', group: 'Database' },
+  { id: 'postgres', name: 'PostgreSQL', group: 'Database' },
+  { id: 'mongo', name: 'MongoDB', group: 'Database' },
+  { id: 'api', name: 'REST API', group: 'Backend' },
   { id: 'scss', name: 'SCSS', group: 'Styling' },
   { id: 'bootstrap', name: 'Bootstrap', group: 'Styling' },
   { id: 'ux', name: 'UI/UX Design', group: 'Design' },
-  { id: 'api', name: 'REST API', group: 'Backend' },
 ]

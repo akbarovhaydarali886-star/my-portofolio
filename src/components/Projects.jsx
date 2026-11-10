@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { projects } from '../data/projects.js'
 import ProjectCard from './ProjectCard.jsx'
@@ -7,53 +7,10 @@ import Reveal from './Reveal.jsx'
 export default function Projects() {
   const { t } = useLanguage();
   const [viewMode, setViewMode] = useState('3d'); // '3d' or 'grid'
-  const [rotationOffset, setRotationOffset] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const dragRef = useRef({ isDown: false, startX: 0, startOffset: 0, moved: false });
 
   const total = projects.length;
   const angleStep = 360 / total;
-
-  const handlePrev = () => {
-    setRotationOffset((prev) => prev + angleStep);
-  };
-
-  const handleNext = () => {
-    setRotationOffset((prev) => prev - angleStep);
-  };
-
-  const handleMouseDown = (e) => {
-    if (e.target.closest('a') || e.target.closest('button')) return;
-    dragRef.current = { isDown: true, startX: e.clientX, startOffset: rotationOffset, moved: false };
-    setIsPaused(true);
-  };
-
-  const handleMouseMove = (e) => {
-    if (!dragRef.current.isDown) return;
-    const delta = e.clientX - dragRef.current.startX;
-    if (Math.abs(delta) > 5) dragRef.current.moved = true;
-    setRotationOffset(dragRef.current.startOffset + delta * 0.35);
-  };
-
-  const handleMouseUp = () => {
-    dragRef.current.isDown = false;
-  };
-
-  const handleTouchStart = (e) => {
-    if (e.target.closest('a') || e.target.closest('button')) return;
-    dragRef.current = { isDown: true, startX: e.touches[0].clientX, startOffset: rotationOffset, moved: false };
-    setIsPaused(true);
-  };
-
-  const handleTouchMove = (e) => {
-    if (!dragRef.current.isDown) return;
-    const delta = e.touches[0].clientX - dragRef.current.startX;
-    setRotationOffset(dragRef.current.startOffset + delta * 0.4);
-  };
-
-  const handleTouchEnd = () => {
-    dragRef.current.isDown = false;
-  };
 
   return (
     <section id="projects" className="projects">
@@ -88,30 +45,12 @@ export default function Projects() {
               <div className="carousel-nav-buttons">
                 <button
                   type="button"
-                  className="carousel-nav-btn"
-                  onClick={handlePrev}
-                  aria-label="Oldingisi"
-                  title="Oldingisi"
-                >
-                  ❮
-                </button>
-                <button
-                  type="button"
                   className={`carousel-nav-btn pause-btn ${isPaused ? 'paused' : ''}`}
                   onClick={() => setIsPaused((p) => !p)}
                   aria-label={isPaused ? "Aylantirish" : "To'xtatish"}
                   title={isPaused ? "Aylantirish" : "To'xtatish"}
                 >
                   {isPaused ? '▶' : '⏸'}
-                </button>
-                <button
-                  type="button"
-                  className="carousel-nav-btn"
-                  onClick={handleNext}
-                  aria-label="Keyingisi"
-                  title="Keyingisi"
-                >
-                  ❯
                 </button>
               </div>
             )}
@@ -126,38 +65,17 @@ export default function Projects() {
           </Reveal>
         ) : viewMode === '3d' ? (
           <div className="carousel-viewport-wrapper">
-            <p className="carousel-hint">
-              💡 <span>Sichqonchani kartaga olib boring — karta oldinga chiqadi va to'xtaydi</span> • Sichqoncha yoki barmoq bilan sudrab aylantirish mumkin
-            </p>
-
-            <div
-              className="carousel-stage"
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-              onMouseLeave={() => {
-                handleMouseUp();
-                setIsPaused(false);
-              }}
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
-              <div
-                className="carousel-rotator"
-                style={{ transform: `rotateY(${rotationOffset}deg)` }}
-              >
-                <div className={`carousel-track ${isPaused ? 'is-paused' : ''}`}>
-                  {projects.map((p, i) => (
-                    <div
-                      key={p.id}
-                      className="carousel-slot"
-                      style={{ '--angle': i * angleStep }}
-                    >
-                      <ProjectCard project={p} />
-                    </div>
-                  ))}
-                </div>
+            <div className="carousel-stage">
+              <div className={`carousel-track ${isPaused ? 'is-paused' : ''}`}>
+                {projects.map((p, i) => (
+                  <div
+                    key={p.id}
+                    className="carousel-slot"
+                    style={{ '--angle': i * angleStep }}
+                  >
+                    <ProjectCard project={p} />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -255,19 +173,8 @@ export default function Projects() {
           border-color: var(--accent);
           transform: scale(1.08);
         }
-        .carousel-hint {
-          text-align: center;
-          color: var(--ink-soft);
-          font-size: 0.82rem;
-          margin: 0 auto 20px;
-          max-width: 620px;
-        }
-        .carousel-hint span {
-          color: var(--accent);
-          font-weight: 600;
-        }
 
-        /* 3D Carousel Stage with compact dimensions */
+        /* 3D Carousel Stage */
         :root {
           --card-w: 250px;
           --card-h: 360px;
@@ -287,36 +194,24 @@ export default function Projects() {
           display: flex;
           justify-content: center;
           align-items: center;
-          cursor: grab;
-          user-select: none;
+          overflow: hidden;
         }
-        .carousel-stage:active {
-          cursor: grabbing;
+        @keyframes spinCharxpalak {
+          0% {
+            transform: rotateY(0deg);
+          }
+          100% {
+            transform: rotateY(360deg);
+          }
         }
-        .carousel-rotator {
+        .carousel-track {
           width: var(--card-w);
           height: var(--card-h);
           position: relative;
           transform-style: preserve-3d;
-          transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+          animation: spinCharxpalak 50s linear infinite;
         }
-        @keyframes spinCharxpalak {
-          0% {
-            transform: translateZ(-140px) rotateX(-2deg) rotateY(0deg);
-          }
-          100% {
-            transform: translateZ(-140px) rotateX(-2deg) rotateY(360deg);
-          }
-        }
-        .carousel-track {
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          transform-style: preserve-3d;
-          animation: spinCharxpalak 45s linear infinite;
-        }
-        .carousel-track.is-paused,
-        .carousel-track:hover {
+        .carousel-track.is-paused {
           animation-play-state: paused;
         }
         .carousel-slot {
@@ -329,16 +224,6 @@ export default function Projects() {
           transform-style: preserve-3d;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
-          transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.35s ease, opacity 0.35s ease;
-        }
-        .carousel-slot:hover {
-          transform: rotateY(calc(var(--angle) * 1deg)) translateZ(calc(var(--radius) + 90px)) scale(1.08);
-          z-index: 100;
-          filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.8));
-        }
-        .carousel-track:hover .carousel-slot:not(:hover) {
-          opacity: 0.65;
-          filter: brightness(0.82);
         }
 
         /* Grid Mode */

@@ -217,6 +217,31 @@ export function PythonIcon() {
   )
 }
 
+export function DockerIcon() {
+  return (
+    <Svg className="icon-docker">
+      <rect x="14" y="19" width="4" height="4" fill="#2496ED" rx="0.5" />
+      <rect x="19" y="19" width="4" height="4" fill="#2496ED" rx="0.5" />
+      <rect x="24" y="19" width="4" height="4" fill="#2496ED" rx="0.5" />
+      <rect x="19" y="14" width="4" height="4" fill="#2496ED" rx="0.5" />
+      <rect x="24" y="14" width="4" height="4" fill="#2496ED" rx="0.5" />
+      <rect x="29" y="19" width="4" height="4" fill="#2496ED" rx="0.5" />
+      <path d="M38 23 C36 21 33 21 32 23 C29 23 28 24 26 24 H10 C8 24 6 27 6 30 C7 36 14 38 23 38 C34 38 39 31 40 26 C41 24 40 23 38 23 Z" fill="#2496ED" />
+      <circle cx="12" cy="30" r="1" fill="#FFF" />
+    </Svg>
+  )
+}
+
+export function CicdIcon() {
+  return (
+    <Svg className="icon-cicd">
+      <path d="M16 18 C11 18 8 21 8 24 C8 27 11 30 16 30 C20 30 22 26 24 24 C26 22 28 18 32 18 C37 18 40 21 40 24 C40 27 37 30 32 30 C28 30 26 26 24 24 C22 22 20 18 16 18 Z" stroke="#38BDF8" strokeWidth="3" strokeLinecap="round" fill="none" />
+      <circle cx="16" cy="24" r="2.5" fill="#38BDF8" />
+      <circle cx="32" cy="24" r="2.5" fill="#38BDF8" />
+    </Svg>
+  )
+}
+
 export function TelegramIcon() {
   return (
     <Svg className="icon-telegram">
@@ -248,6 +273,8 @@ const ICONS = {
   python: PythonIcon,
   telegram: TelegramIcon,
   go: GoIcon,
+  docker: DockerIcon,
+  cicd: CicdIcon,
 }
 
 export default function TechIcon({ id }) {
@@ -271,7 +298,8 @@ export const TECH_STACK = [
   { id: 'api', name: 'REST API', group: 'Backend' },
   { id: 'go', name: 'Go', group: 'Telegram Bots' },
   { id: 'python', name: 'Python', group: 'Telegram Bots' },
-  { id: 'telegram', name: 'Telegram Bots', group: 'Bots' },
+  { id: 'docker', name: 'Docker', group: 'DevOps' },
+  { id: 'cicd', name: 'CI/CD', group: 'DevOps' },
   { id: 'scss', name: 'SCSS', group: 'Styling' },
   { id: 'bootstrap', name: 'Bootstrap', group: 'Styling' },
   { id: 'ux', name: 'UI/UX Design', group: 'Design' },

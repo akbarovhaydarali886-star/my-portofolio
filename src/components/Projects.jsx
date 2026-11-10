@@ -103,7 +103,7 @@ export default function Projects() {
           align-items: flex-end;
           flex-wrap: wrap;
           gap: 16px;
-          margin-bottom: 20px;
+          margin-bottom: 24px;
         }
         .projects-title {
           font-size: clamp(1.6rem, 3vw, 2.2rem);
@@ -154,13 +154,13 @@ export default function Projects() {
           gap: 6px;
         }
         .carousel-nav-btn {
-          width: 34px;
-          height: 34px;
+          width: 36px;
+          height: 36px;
           border-radius: 50%;
           background: rgba(128, 128, 128, 0.12);
           border: 1px solid var(--border-color);
           color: var(--ink);
-          font-size: 0.9rem;
+          font-size: 0.95rem;
           font-weight: bold;
           display: grid;
           place-items: center;
@@ -174,34 +174,39 @@ export default function Projects() {
           transform: scale(1.08);
         }
 
-        /* 3D Carousel Stage */
+        /* 3D Carousel Stage (Ramka) */
         :root {
-          --card-w: 250px;
-          --card-h: 360px;
-          --radius: 490px;
+          --card-w: 230px;
+          --card-h: 330px;
+          --radius: 460px;
+          --track-z: -250px;
         }
         .carousel-viewport-wrapper {
           position: relative;
           width: 100%;
-          padding: 10px 0 50px;
+          padding: 10px 0 20px;
         }
         .carousel-stage {
           position: relative;
           width: 100%;
-          height: 460px;
+          height: 520px;
           perspective: 1400px;
           perspective-origin: 50% 50%;
           display: flex;
           justify-content: center;
           align-items: center;
+          border-radius: 20px;
+          border: 1px solid var(--border-color);
+          background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.04) 0%, rgba(10, 25, 47, 0.3) 60%, transparent 100%);
           overflow: hidden;
+          box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.35);
         }
         @keyframes spinCharxpalak {
           0% {
-            transform: rotateY(0deg);
+            transform: translateZ(var(--track-z)) rotateX(-2deg) rotateY(0deg);
           }
           100% {
-            transform: rotateY(360deg);
+            transform: translateZ(var(--track-z)) rotateX(-2deg) rotateY(360deg);
           }
         }
         .carousel-track {
@@ -243,23 +248,25 @@ export default function Projects() {
         /* Responsive */
         @media (max-width: 1024px) {
           :root {
-            --card-w: 230px;
-            --card-h: 350px;
-            --radius: 450px;
+            --card-w: 210px;
+            --card-h: 320px;
+            --radius: 410px;
+            --track-z: -220px;
           }
           .carousel-stage {
-            height: 440px;
+            height: 490px;
             perspective: 1250px;
           }
         }
         @media (max-width: 768px) {
           :root {
-            --card-w: 205px;
-            --card-h: 335px;
-            --radius: 395px;
+            --card-w: 190px;
+            --card-h: 300px;
+            --radius: 360px;
+            --track-z: -190px;
           }
           .carousel-stage {
-            height: 420px;
+            height: 460px;
             perspective: 1100px;
           }
           .projects-header-row {
@@ -269,12 +276,13 @@ export default function Projects() {
         }
         @media (max-width: 480px) {
           :root {
-            --card-w: 180px;
-            --card-h: 310px;
-            --radius: 340px;
+            --card-w: 165px;
+            --card-h: 280px;
+            --radius: 310px;
+            --track-z: -160px;
           }
           .carousel-stage {
-            height: 390px;
+            height: 430px;
             perspective: 950px;
           }
         }

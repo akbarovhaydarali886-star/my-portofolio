@@ -206,6 +206,28 @@ export function MongoIcon() {
   )
 }
 
+export function PythonIcon() {
+  return (
+    <Svg className="icon-python">
+      <path d="M24 8 C16 8 14 12 14 16 V20 H24 V21 H12 C12 21 8 22 8 28 C8 34 12 36 16 36 H20 V32 C20 32 20 28 24 28 H32 C32 28 36 26 36 22 V16 C36 12 32 8 24 8 Z" fill="#3776AB" />
+      <path d="M24 40 C32 40 34 36 34 32 V28 H24 V27 H36 C36 27 40 26 40 20 C40 14 36 12 32 12 H28 V16 C28 16 28 20 24 20 H16 C16 20 12 22 12 26 V32 C12 36 16 40 24 40 Z" fill="#FFD43B" />
+      <circle cx="19" cy="14" r="2" fill="#FFF" />
+      <circle cx="29" cy="34" r="2" fill="#FFF" />
+    </Svg>
+  )
+}
+
+export function TelegramIcon() {
+  return (
+    <Svg className="icon-telegram">
+      <circle cx="24" cy="24" r="18" fill="#229ED9" />
+      <path d="M12 24 L32 16 L28 36 L22 28 Z" fill="#FFF" />
+      <path d="M22 28 L20 34 L28 36" fill="#B0D4F1" />
+      <path d="M22 28 L32 16" stroke="#B0D4F1" strokeWidth="1" />
+    </Svg>
+  )
+}
+
 const ICONS = {
   html: HtmlIcon,
   css: CssIcon,
@@ -223,6 +245,9 @@ const ICONS = {
   sql: SqlIcon,
   postgres: PostgresIcon,
   mongo: MongoIcon,
+  python: PythonIcon,
+  telegram: TelegramIcon,
+  go: GoIcon,
 }
 
 export default function TechIcon({ id }) {
@@ -244,6 +269,9 @@ export const TECH_STACK = [
   { id: 'postgres', name: 'PostgreSQL', group: 'Database' },
   { id: 'mongo', name: 'MongoDB', group: 'Database' },
   { id: 'api', name: 'REST API', group: 'Backend' },
+  { id: 'go', name: 'Go', group: 'Telegram Bots' },
+  { id: 'python', name: 'Python', group: 'Telegram Bots' },
+  { id: 'telegram', name: 'Telegram Bots', group: 'Bots' },
   { id: 'scss', name: 'SCSS', group: 'Styling' },
   { id: 'bootstrap', name: 'Bootstrap', group: 'Styling' },
   { id: 'ux', name: 'UI/UX Design', group: 'Design' },
